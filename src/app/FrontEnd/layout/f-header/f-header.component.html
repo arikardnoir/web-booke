@@ -1,0 +1,37 @@
+<header class="header">
+    <div class="h-box">
+        <div class="h_box-item h_left">
+            <span class="menu_hanburger" style="display: none;"></span>
+            <i class="fa fa-search fa-2x"></i>
+        </div>
+        <div class="h_box-item h_center">
+            <a [routerLink]="['/']" class="logo">
+                <img src="./assets/img/logo.png" alt="" width="75">
+            </a>
+            <div class="searchInput" *ngIf="!hiddenLogo">
+                <form [formGroup]="searchTop">
+                    <input type="text" formControlName="search" (keyup.enter)="_searchTop(searchTop.value)" value="{{ valueSearch }}">
+                </form>
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+        <div class="h_box-item h_right">
+            <div class="b_btn-nav">
+                <a href=""></a>
+            </div>
+            <div class="b_btn-nav">
+            <a [routerLink]="['/login']" class="login" *ngIf="!hiddenMenu.token">
+            Entrar
+            </a>
+            
+            <a [routerLink]="['/admin']" class="loginUser" *ngIf="hiddenMenu.token">
+            {{ hiddenMenu.nome[0] }}
+            </a>
+        
+        </div>
+        </div>
+    </div>
+</header>
+<div class="search-mobile" style="width: 100%; background: rgb(192, 192, 192); padding: 0px 15px 5px 15px;">
+    <input type="text" style="width: 100%; background: white; border: 1px solid white ;height: 40px; border-radius: 4px">
+</div>

@@ -1,0 +1,31 @@
+<div class="box-form">
+  <h3 class="title-form">ENTRAR</h3>
+  <div class="alerts">
+      <div *ngIf="logado" class="alert alert-danger" role="alert">
+        Email ou Senha inválido!
+      </div>
+  </div>
+  <form [formGroup]="formLogin" novalidate>
+    <div class="form-group">
+      <input type="text" class="" placeholder="Email" formControlName="email">
+    </div>
+    <div class="form-group">
+      <input type="password" class="" placeholder="Senha" formControlName="password">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
+    </div>
+    <div class="esqueceu_senha">
+      <button type="button" data-toggle="modal" data-target="#exampleModal">
+        Esqueceu a senha ?
+      </button>
+    </div>
+    <div class="box_btn-login">
+      <button class="btn-login" (click)="login(formLogin.value)">Entrar</button>
+    </div>
+  </form>
+</div>
+<div class="box_criar-conta">
+  <span>Não tem cadastro? </span> <a [routerLink]="['/login/cadastrar']"> Crie a sua conta</a>
+</div>

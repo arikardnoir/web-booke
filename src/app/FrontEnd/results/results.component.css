@@ -1,0 +1,9 @@
+.msgNotFound{
+    padding-top: 50px;
+    font-size: 1.7em;
+    font-weight: 150;
+}
+
+.content-checkbox input, .content-checkbox span{
+    display: inline;
+}

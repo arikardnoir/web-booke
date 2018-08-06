@@ -1,0 +1,9 @@
+.main-footer{
+    display: block;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: #F2F2F2;
+    color: #666666;
+    margin-left: 0;
+}

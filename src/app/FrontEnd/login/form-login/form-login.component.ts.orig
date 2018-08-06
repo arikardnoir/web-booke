@@ -1,0 +1,58 @@
+import { LoginService } from './login.service';
+import { DataLogin } from './../data-login.model';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, Output } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { EventEmitter } from 'protractor';
+import { User } from './user.model';
+
+@Component({
+  selector: 'rt-form-login',
+  templateUrl: './form-login.component.html',
+  styleUrls: ['./form-login.component.css']
+})
+export class FormLoginComponent implements OnInit {
+
+  formLogin: FormGroup;
+  logado;
+  status: any;
+  // @Output() logado = false;
+  // mudouValor = new EventEmitter();
+  constructor(private router: Router, private formBuilder: FormBuilder,
+     private loginService: LoginService) { }
+
+  ngOnInit() {
+    this.formLogin = this.formBuilder.group({
+      email: this.formBuilder.control('', Validators.required),
+      password: this.formBuilder.control('', Validators.required)
+    });
+  }
+
+  login(dados: DataLogin){
+    var self = this;
+    this.loginService.login(dados)
+    .subscribe (user => self.loginService.setUser({name_university:user.user.name_university,
+                                                   email:user.user.email,token:user.token}),
+                response => console.log(response.error.message))
+
+
+    // if (this.status) {
+    // }
+   // return this.errorLogin();
+  }
+
+  //getLogin(dados: DataLogin) {
+
+  //   this.logado = this.loginService.login(dados);
+  //   if (this.logado) {
+  //     this.errorLogin();
+  //   }
+  // }
+
+  errorLogin() {
+    this.logado = true;
+    setTimeout( () => this.logado = false, 2000);
+  }
+
+}

@@ -1,0 +1,8 @@
+<form [formGroup]="searchForm" novalidate>
+  <div class="box-search">
+    <input type="text" formControlName="search" (keyup.enter)="results(searchForm.value)">
+  </div>
+  <div class="box-btn_search">
+    <button  type="button" class="btn btn-default btn-search" (click)="results(searchForm.value)">Pesquisar</button> 
+  </div>
+</form>

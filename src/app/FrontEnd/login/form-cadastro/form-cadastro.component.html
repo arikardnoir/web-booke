@@ -1,0 +1,47 @@
+<div class="box-form">
+  <h3 class="title-form">CADASTRAR</h3>
+  <form [formGroup]="formCadastro" novalidate>
+    <rt-input label="Nome" errorMessage="Campo Obrigatório">
+      <input type="text" class="" placeholder="Nome da Universidade" formControlName="name_university">
+    </rt-input >
+    <rt-input label="Sigla" errorMessage="Campo Obrigatório">
+      <input type="text" class="" placeholder="Sigla" formControlName="initials">
+    </rt-input >
+    <rt-input label="Data de fundação" errorMessage="Campo Obrigatório">
+      <input type="date" class="" placeholder="Data de fundação" formControlName="fundation_date">
+    </rt-input >
+    <rt-input label="Código da Universidade" errorMessage="Campo Obrigatório e 6 caracteres no minimo">
+      <input type="text" class="" placeholder="Código da Universidade" formControlName="university_code">
+    </rt-input >
+    <rt-input label="Cidade" errorMessage="Campo Obrigatório">
+      <input type="text" class="" placeholder="Cidade" formControlName="city">
+    </rt-input >
+    <rt-input label="Provincia" errorMessage="Campo Obrigatório">
+      <input type="text" class="" placeholder="Provincia" formControlName="province">
+    </rt-input >
+    <rt-input label="Imagem de Perfil" errorMessage="Campo Obrigatório">
+      <input type="file" class="" (change)="uploadImage($event)" placeholder="Imagem de Perfil" formControlName="image">
+    </rt-input >
+    <rt-input label="Email" errorMessage="Campo Obrigatório">
+      <input type="text" class="" placeholder="Email" formControlName="email">
+    </rt-input >
+    <rt-input label="Senha" errorMessage="Campo Obrigatório e 6 caracteres no minimo">
+      <input type="password" class="" placeholder="Senha" formControlName="password">
+    </rt-input >
+    <rt-input label="Confirmar SenhaSenha" errorMessage="Campo Obrigatório e 6 caracteres no minimo">
+      <input type="password" class="" placeholder="Confirmar Senha Senha" formControlName="password_confirmation">
+    </rt-input >
+
+    <input style="display: none" type="text" class="" formControlName="status">
+
+    <div class="box_btn-login">
+      <button class="btn-login" (click)="getDados(formCadastro.value)"
+      [disabled]="!formCadastro.valid">Cadastrar</button>
+    </div>
+  </form>
+</div>
+<div class="box_criar-conta">
+  <span>
+    Já tem cadastro? <a [routerLink]="['/login/entrar']">Fazer Login</a>
+  </span>
+</div>
