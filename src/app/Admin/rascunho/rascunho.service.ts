@@ -5,7 +5,7 @@ import { LoginService } from '../../FrontEnd/login/form-login/login.service';
 
 @Injectable()
 export class RascunhoService {
-    url = 'http://localhost/repositorio-de-trabalhos/API/public/api/v2/work/showall/';
+    url = 'http://localhost/Booke/api-booke/public/api/v2/work/showall/';
 
     constructor(private http: HttpClient, private loginService: LoginService) {}
 

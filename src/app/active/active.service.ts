@@ -14,7 +14,7 @@ export class ActiveService {
 
   constructor(private loginService: LoginService, private http: HttpClient) { }
 
-  private urlActive = 'http://localhost/repositorio-de-trabalhos/API/public/api/account/activate';
+  private urlActive = 'http://localhost/Booke/api-booke/public/api/account/activate';
 
   user: User;
   tkn = this.loginService.getToken().token;

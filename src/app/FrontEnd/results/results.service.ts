@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ResultsService {
 
-    urlAllWorks = 'http://localhost/repositorio-de-trabalhos/API/public/api/v2/workout/searchall';
+    urlAllWorks = 'http://localhost/Booke/api-booke/public/api/v2/workout/searchall';
     constructor(private http: HttpClient) {}
 
     showWorkUni(key_university): Observable<any> {

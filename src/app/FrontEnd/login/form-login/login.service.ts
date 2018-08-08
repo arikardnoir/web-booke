@@ -15,7 +15,7 @@ export class LoginService {
 
   user: User;
 
-  private urlLogin = 'http://localhost/repositorio-de-trabalhos/API/public/api/account/auth';
+  private urlLogin = 'http://localhost/Booke/api-booke/public/api/account/auth';
 
   constructor(private http: HttpClient, private router: Router) { }
 

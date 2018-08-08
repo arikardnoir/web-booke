@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class ModalService {
 
-  private urlForgetPass = 'http://localhost/repositorio-de-trabalhos/API/public/api/account/forgetpass';
-  private urlDownloadFile = 'http://localhost/repositorio-de-trabalhos/API/public/api/v2/workout/file/';
+  private urlForgetPass = 'http://localhost/Booke/api-booke/public/api/account/forgetpass';
+  private urlDownloadFile = 'http://localhost/Booke/api-booke/public/api/v2/workout/file/';
 
   constructor(private http: HttpClient) { }
 

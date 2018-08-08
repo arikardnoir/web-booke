@@ -12,13 +12,11 @@ export class HeaderService {
 
   constructor(private http: HttpClient, private loginService: LoginService) {}
 
-  urlLogout = 'http://localhost/repositorio-de-trabalhos/API/public/api/account/logout';
-  headers = new HttpHeaders();
-  header = this.headers.set('Authorization', `Bearer ${this.loginService.getUser().token}`);
+  urlLogout = 'http://localhost/Booke/api-booke/public/api/account/logout';
 
   logout(): Observable<any> {
 
-    return this.http.get<any>(this.urlLogout,{headers: this.header}).pipe(status => status);
+    return this.http.get<any>(this.urlLogout).pipe(status => status);
 
   }
 }

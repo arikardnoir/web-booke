@@ -15,7 +15,7 @@ export class NovaSenhaService {
   headers = new HttpHeaders();
   header = this.header = this.headers.set('Authorization', `Bearer ${this.loginService.getUser().token}`);
 
-  private urlNewPass = 'http://localhost/repositorio-de-trabalhos/API/public/api/v2/newpass';
+  private urlNewPass = 'http://localhost/Booke/api-booke/public/api/v2/newpass';
 
   newPass(data){
 
