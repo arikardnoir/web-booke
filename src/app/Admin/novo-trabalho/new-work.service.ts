@@ -19,7 +19,7 @@ export class NewWorkService {
 
     createNewWork(dados): Observable<any> {
 
-      const urlCreateWork = `http://localhost/Booke/api-booke/public/api/v2/work`;
+      const urlCreateWork = `https://api-booke.herokuapp.com/api/v2/work`;
       dados.university_id = this.id;
 
         return this.http.post<any>(urlCreateWork, dados,

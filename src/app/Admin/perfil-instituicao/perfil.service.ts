@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class PerfilService {
 
-    urlLogin = 'http://localhost/Booke/api-booke/public/api/account/auth';
+    urlLogin = 'https://api-booke.herokuapp.com/api/account/auth';
     constructor(private http: HttpClient, private loginService: LoginService) {}
 
     getDados(): Observable<any> {

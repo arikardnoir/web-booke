@@ -13,7 +13,7 @@ export class RecuperarSenhaService {
   headers = new HttpHeaders();
   header;
 
-  private urlRecPass = 'http://localhost/Booke/api-booke/public/api/account/recpass';
+  private urlRecPass = 'https://api-booke.herokuapp.com/api/account/recpass';
 
   recoveryPass(data,token): Observable<any> {
 

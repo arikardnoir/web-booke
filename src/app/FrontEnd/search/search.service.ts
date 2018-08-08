@@ -15,9 +15,9 @@ export class SearchService {
 
   constructor(private router: Router, private http: HttpClient) { }
 
-  private urlSearchAll = 'http://localhost/Booke/api-booke/public/api/v2/workout/search';
-  private urlSearchName = 'http://localhost/Booke/api-booke/public/api/v2/workout/search/name';
-  private urlSearchDescription = 'http://localhost/Booke/api-booke/public/api/v2/workout/search/description';
+  private urlSearchAll = 'https://api-booke.herokuapp.com/api/v2/workout/search';
+  private urlSearchName = 'https://api-booke.herokuapp.com/api/v2/workout/search/name';
+  private urlSearchDescription = 'https://api-booke.herokuapp.com/api/v2/workout/search/description';
 
   searchAll(keysearch: String): Observable<any> {
     const urlAPI = `${this.urlSearchAll}?key_search=${keysearch}`;

@@ -12,7 +12,7 @@ export class CadastroService {
 
   constructor(private http: HttpClient) { }
 
-  private urlSignup = 'http://localhost/Booke/api-booke/public/api/v2/user';
+  private urlSignup = 'https://api-booke.herokuapp.com/api/v2/user';
 
   data: DataCadastro;
 

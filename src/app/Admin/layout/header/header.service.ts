@@ -12,7 +12,7 @@ export class HeaderService {
 
   constructor(private http: HttpClient, private loginService: LoginService) {}
 
-  urlLogout = 'http://localhost/Booke/api-booke/public/api/account/logout';
+  urlLogout = 'https://api-booke.herokuapp.com/api/account/logout';
 
   logout(): Observable<any> {
 
