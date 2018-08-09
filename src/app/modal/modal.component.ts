@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NotificationService } from './../shared/messages/notification.service';
 import { ModalService } from '../modal/modal.service';
 import { ResultsService } from '../FrontEnd/results/results.service';
+import { Modal } from './modal.model';
 
 import { ModalNotificationService } from '../shared/messages/modal.service';
 
@@ -14,9 +15,7 @@ import { ModalNotificationService } from '../shared/messages/modal.service';
 export class ModalComponent implements OnInit {
 
   recuperarSenhaF: FormGroup;
-  message = {
-    //title: String
-  };
+  message: Modal;
 
   constructor(private fb: FormBuilder,
               private mService: ModalNotificationService,
