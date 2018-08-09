@@ -21,9 +21,8 @@ export class RecuperarSenhaComponent implements OnInit {
 
     firstParam;
     formRecPass: FormGroup;
-    logado;
+    logado = false;
   ngOnInit() {
-    this.logado = true;
     this.route.params.subscribe(
       params => {
          this.firstParam = params['token'];

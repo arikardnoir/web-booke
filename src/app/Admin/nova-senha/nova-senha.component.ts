@@ -20,9 +20,8 @@ export class NovaSenhaComponent implements OnInit {
     private novaSenhaService: NovaSenhaService) { }
 
   formNewPass: FormGroup;
-  logado;
+  logado = false;
   ngOnInit() {
-    this.logado = true;
     this.formNewPass = this.formBuilder.group({
       email: this.formBuilder.control(this.loginService.getUser().email, [Validators.required, Validators.minLength(6)]),
       oldPassword: this.formBuilder.control('', [Validators.required, Validators.minLength(6)]),
