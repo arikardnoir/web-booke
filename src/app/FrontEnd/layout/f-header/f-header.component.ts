@@ -16,14 +16,9 @@ export class FHeaderComponent implements OnInit, AfterContentChecked {
   searchTop: FormGroup;
   hiddenLogo = false;
   valueSearch;
-  hiddenMenu = {
-    //nome: String,
-    //initials: String,
-    //id: Number,
-    //image: String,
-    //email: String,
-    //token: String
-  };
+  token;
+  nome;
+
   constructor(private route: ActivatedRoute,
     private loginService: LoginService, private router: Router,
     private searchService: SearchService, private fb: FormBuilder,
@@ -34,7 +29,8 @@ export class FHeaderComponent implements OnInit, AfterContentChecked {
     this.searchTop = this.fb.group({ search: this.fb.control('') });
     this.valueSearch = this.router.routerState.snapshot.url;
 
-    this.hiddenMenu = this.loginService.getUser().token;
+    this.token = this.loginService.getUser().token;
+    this.nome = this.loginService.getUser().nome;
   }
 
   _searchTop(keysearch: string) {

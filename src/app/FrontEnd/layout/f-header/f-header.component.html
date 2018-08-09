@@ -20,12 +20,12 @@
                 <a href=""></a>
             </div>
             <div class="b_btn-nav">
-            <a [routerLink]="['/login']" class="login" *ngIf="!hiddenMenu.token">
+            <a [routerLink]="['/login']" class="login" *ngIf="!token">
             Entrar
             </a>
             
-            <a [routerLink]="['/admin']" class="loginUser" *ngIf="hiddenMenu.token">
-            {{ hiddenMenu.nome[0] }}
+            <a [routerLink]="['/admin']" class="loginUser" *ngIf="token">
+            {{ nome }}
             </a>
         
         </div>
