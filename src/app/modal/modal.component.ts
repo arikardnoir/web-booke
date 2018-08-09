@@ -14,7 +14,9 @@ import { ModalNotificationService } from '../shared/messages/modal.service';
 export class ModalComponent implements OnInit {
 
   recuperarSenhaF: FormGroup;
-  message = {};
+  message = {
+    title: String
+  };
 
   constructor(private fb: FormBuilder,
               private mService: ModalNotificationService,
