@@ -15,7 +15,7 @@ export class ModalComponent implements OnInit {
 
   recuperarSenhaF: FormGroup;
   message = {
-    title: String
+    //title: String
   };
 
   constructor(private fb: FormBuilder,

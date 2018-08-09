@@ -17,12 +17,12 @@ export class FHeaderComponent implements OnInit, AfterContentChecked {
   hiddenLogo = false;
   valueSearch;
   hiddenMenu = {
-    nome: String,
-    initials: String,
-    id: Number,
-    image: String,
-    email: String,
-    token: String
+    //nome: String,
+    //initials: String,
+    //id: Number,
+    //image: String,
+    //email: String,
+    //token: String
   };
   constructor(private route: ActivatedRoute,
     private loginService: LoginService, private router: Router,
@@ -34,7 +34,7 @@ export class FHeaderComponent implements OnInit, AfterContentChecked {
     this.searchTop = this.fb.group({ search: this.fb.control('') });
     this.valueSearch = this.router.routerState.snapshot.url;
 
-    //this.hiddenMenu = this.loginService.getUser().token;
+    this.hiddenMenu = this.loginService.getUser().token;
   }
 
   _searchTop(keysearch: string) {
