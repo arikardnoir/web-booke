@@ -28,7 +28,6 @@ export class PerfilInstituicaoService {
   me(): Observable<any> {
 
     if (this.loginService.isLoggedIn()) {
-      console.log('Entrou');
       this.headers = this.headers.set('Authorization', `Bearer ${this.loginService.getUser().token}`);
 
       // Aqui tem que negar isso, e retornar para a home page da Aplicacao

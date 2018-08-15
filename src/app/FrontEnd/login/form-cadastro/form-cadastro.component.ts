@@ -66,16 +66,16 @@ export class FormCadastroComponent implements OnInit {
       this.cadastroService.getDados(fd).subscribe(data => {
         //this.notificationService.notify('Usuário cadastrado com sucesso !', false);
         console.log(data);
-        this.notificationService.notify(data.message, false);
+        this.notificationService.notify(data.message);
         this.clearForm();
       },
         response => {
           //this.notificationService.notify('Erro ao cadastrar, verifique os campos !', false);
-          this.notificationService.notify(response.message, false);
+          this.notificationService.notify(response.message);
         }
       );
     } else {
-      return this.notificationService.notify('Campos obrigatórios', false);
+      return this.notificationService.notify('Campos obrigatórios');
     }
   }
 

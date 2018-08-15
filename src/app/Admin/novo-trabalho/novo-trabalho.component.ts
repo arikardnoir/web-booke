@@ -50,14 +50,9 @@ export class NovoTrabalhoComponent implements OnInit {
 
   uploadFile(event) {
     this.selectedFile = <File>event.target.files[0];
-
-    console.log(this.selectedFile);
-    console.log(this.selectedFile.name);
   }
 
   createNewWork(dados) {
-    console.log(this.selectedFile);
-    console.log(this.selectedFile.name);
 
     const fd = new FormData();
           fd.append('title', dados.title);
@@ -84,7 +79,7 @@ export class NovoTrabalhoComponent implements OnInit {
     .subscribe(
       data => {
         this.notificationService.notify(data.message);
-        console.log(data)}
+        }
       ,
       response => this.notificationService.notify(response.message)
     );
