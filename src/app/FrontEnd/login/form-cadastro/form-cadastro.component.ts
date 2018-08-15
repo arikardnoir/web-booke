@@ -41,7 +41,6 @@ export class FormCadastroComponent implements OnInit {
 
    uploadImage(event) {
      this.selectedFile = <File>event.target.files[0];
-     console.log(this.selectedFile);
    }
 
   getDados(dados) {
@@ -61,12 +60,10 @@ export class FormCadastroComponent implements OnInit {
       fd.append('password', dados.password);
       fd.append('password_confirmation', dados.password_confirmation);
 
-      console.log(fd);
-
       this.cadastroService.getDados(fd).subscribe(data => {
-        //this.notificationService.notify('Usuário cadastrado com sucesso !', false);
+        this.notificationService.notify('Universidade cadastrado com sucesso !');
         console.log(data);
-        this.notificationService.notify(data.message);
+        this.notificationService.notify(data['message']);
         this.clearForm();
       },
         response => {
