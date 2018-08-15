@@ -65,6 +65,7 @@ export class FormCadastroComponent implements OnInit {
 
       this.cadastroService.getDados(fd).subscribe(data => {
         //this.notificationService.notify('Usuário cadastrado com sucesso !', false);
+        console.log(data);
         this.notificationService.notify(data.message, false);
         this.clearForm();
       },
