@@ -61,9 +61,9 @@ export class FormCadastroComponent implements OnInit {
       fd.append('password_confirmation', dados.password_confirmation);
 
       this.cadastroService.getDados(fd).subscribe(data => {
-        this.notificationService.notify('Universidade cadastrado com sucesso !');
+        //this.notificationService.notify('Universidade cadastrado com sucesso !');
         console.log(data);
-        this.notificationService.notify(data['message']);
+        this.notificationService.notify(data.message);
         this.clearForm();
       },
         response => {
