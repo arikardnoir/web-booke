@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { NotificationService } from './../shared/messages/notification.service';
-import { ModalService } from '../modal/modal.service';
-import { ResultsService } from '../FrontEnd/results/results.service';
+import { NotificationService } from '../shared/messages/notification.service';
+import { ModalService } from './modal.service';
+import { ResultsService } from '@FrontEnd/results/results.service';
 import { Modal } from './modal.model';
 
 import { ModalNotificationService } from '../shared/messages/modal.service';
@@ -44,7 +44,7 @@ export class ModalComponent implements OnInit {
   }
 
   downloadFile() {
-    //console.log(this.nameFile);
+    // console.log(this.nameFile);
 
     this.modalService.downloadFile(this.nameFile).subscribe(
       datas => datas,

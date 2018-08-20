@@ -1,8 +1,8 @@
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { SearchService } from './../search/search.service';
+import { SearchService } from '@FrontEnd/search/search.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
-import { ResultsService } from './results.service';
+import { ResultsService } from '@FrontEnd/results/results.service';
 import { NotificationService } from '../../shared/messages/notification.service';
 import { ModalNotificationService } from '../../shared/messages/modal.service';
 
@@ -90,7 +90,7 @@ export class ResultsComponent implements OnInit {
       if (this.works[i].id === resume) {
         const work = this.works[i];
         this.mService.notify(work);
-        this.resultsService.setWork(work.id,work.title,work.file);
+        this.resultsService.setWork(work.id, work.title, work.file);
 
       }
     }

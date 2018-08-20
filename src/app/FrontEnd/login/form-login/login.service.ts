@@ -15,7 +15,7 @@ export class LoginService {
 
   user: User;
 
-  private urlLogin = 'https://api-booke.herokuapp.com/api/account/auth';
+  private urlLogin = 'http://localhost/api-booke/public/api/account/auth';
 
   constructor(private http: HttpClient, private router: Router) { }
 

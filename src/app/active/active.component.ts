@@ -1,7 +1,7 @@
-import { NotificationService } from '../shared/messages/notification.service'
+import { NotificationService } from '../shared/messages/notification.service';
 
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../FrontEnd/login/form-login/login.service';
+import { LoginService } from '@FrontEnd/login/form-login/login.service';
 import { ActiveService } from './active.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -35,7 +35,7 @@ export class ActiveComponent implements OnInit {
 
   }
 
-  logged(){
+  logged() {
 
     this.activeService.active().subscribe(
       user => {
@@ -52,7 +52,7 @@ export class ActiveComponent implements OnInit {
         this.pageRefresh();
       }
 
-    )
+    );
 
   }
 

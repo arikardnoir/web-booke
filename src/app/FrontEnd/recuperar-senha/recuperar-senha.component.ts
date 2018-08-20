@@ -1,9 +1,9 @@
-import { NotificationService } from '../../shared/messages/notification.service'
+import { NotificationService } from '../../shared/messages/notification.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../FrontEnd/login/form-login/login.service';
-import { RecuperarSenhaService } from './recuperar-senha.service';
+import { LoginService } from '@FrontEnd/login/form-login/login.service';
+import { RecuperarSenhaService } from '@FrontEnd/recuperar-senha/recuperar-senha.service';
 
 @Component({
   selector: 'rt-recuperar-senha',
@@ -38,18 +38,18 @@ export class RecuperarSenhaComponent implements OnInit {
 
   }
 
-  recoveryPass(data){
+  recoveryPass(data) {
 
     if (this.formRecPass.valid) {
 
-      this.recuperarSenhaService.recoveryPass(data,this.firstParam).subscribe(data => {
-        //this.notificationService.notify('Usuário cadastrado com sucesso !', false);
+      this.recuperarSenhaService.recoveryPass(data, this.firstParam).subscribe(data => {
+        // this.notificationService.notify('Usuário cadastrado com sucesso !', false);
         this.notificationService.notify(data.message, false);
         console.log(data);
         this.clearForm();
       },
         response => {
-          //this.notificationService.notify('Erro ao cadastrar, verifique os campos !', false);
+          // this.notificationService.notify('Erro ao cadastrar, verifique os campos !', false);
           this.notificationService.notify(response.message, false);
         }
       );

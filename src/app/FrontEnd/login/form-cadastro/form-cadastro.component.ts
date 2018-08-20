@@ -1,8 +1,8 @@
-import { CadastroService } from './cadastro-service';
-import { DataCadastro } from './../data-cadastro.model';
+import { DataCadastro } from '@FrontEnd/login/data-cadastro.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { NotificationService } from '../../../shared/messages/notification.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'rt-form-cadastro',
@@ -15,7 +15,7 @@ export class FormCadastroComponent implements OnInit {
   selectedFile: File;
   imgAvatar;
   constructor(private formBuilder: FormBuilder,
-    private cadastroService: CadastroService,
+    private _userService: UserService,
     private notificationService: NotificationService) { }
 
   ngOnInit() {
@@ -41,11 +41,12 @@ export class FormCadastroComponent implements OnInit {
 
    uploadImage(event) {
      this.selectedFile = <File>event.target.files[0];
-     console.log(this.selectedFile);
+     // console.log(this.selectedFile);
    }
 
   getDados(dados) {
-    this.notificationService.notify('', true);
+    console.log(dados);
+    // this.notificationService.notify('', true);
     if (this.formCadastro.valid) {
 
       const fd = new FormData();
@@ -60,19 +61,10 @@ export class FormCadastroComponent implements OnInit {
       fd.append('status', dados.status);
       fd.append('password', dados.password);
       fd.append('password_confirmation', dados.password_confirmation);
+      console.log('============');
+      console.log(dados);
+      this._userService.post(fd);
 
-      console.log(fd);
-
-      this.cadastroService.getDados(fd).subscribe(data => {
-        //this.notificationService.notify('Usuário cadastrado com sucesso !', false);
-        this.notificationService.notify(data.message, false);
-        this.clearForm();
-      },
-        response => {
-          //this.notificationService.notify('Erro ao cadastrar, verifique os campos !', false);
-          this.notificationService.notify(response.message, false);
-        }
-      );
     } else {
       return this.notificationService.notify('Campos obrigatórios', false);
     }
@@ -98,7 +90,7 @@ export class FormCadastroComponent implements OnInit {
       name_university: 'Universidade Agostinho Neto',
       initials: 'UAN',
       fundation_date: '2018-04-11',
-      university_code: '123456789',
+      university_code: '10000',
       city: 'luanda',
       province: 'luanda',
       image: null,

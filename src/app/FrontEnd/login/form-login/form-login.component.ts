@@ -1,12 +1,12 @@
-import { NotificationService } from './../../../shared/messages/notification.service';
-import { LoginService } from './login.service';
-import { DataLogin } from './../data-login.model';
+import { NotificationService } from '../../../shared/messages/notification.service';
+import { LoginService } from '@FrontEnd/login/form-login/login.service';
+import { DataLogin } from '@FrontEnd/login/data-login.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, Output } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { EventEmitter } from 'protractor';
-import { User } from './user.model';
+import { User } from '@FrontEnd/login/form-login/user.model';
 import { isError } from 'util';
 
 @Component({
@@ -62,7 +62,7 @@ export class FormLoginComponent implements OnInit {
   isSuccess(user) {
     if (user.status) {
       this.status = this.loginService.verificarLogin(user.status);
-      this.loginService.setUser({name_university: user.user.name_university,initials: user.user.initials,
+      this.loginService.setUser({name_university: user.user.name_university, initials: user.user.initials,
          id: user.user.id,
                             image: user.user.image, email: user.user.email, token: user.token});
     }

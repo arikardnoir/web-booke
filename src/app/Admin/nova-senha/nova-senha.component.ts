@@ -2,7 +2,7 @@ import { NotificationService } from '../../shared/messages/notification.service'
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../FrontEnd/login/form-login/login.service';
+import { LoginService } from '@FrontEnd/login/form-login/login.service';
 import { NovaSenhaService } from './nova-senha.service';
 
 @Component({
@@ -30,7 +30,7 @@ export class NovaSenhaComponent implements OnInit {
     });
   }
 
-  newPass(data){
+  newPass(data) {
 
     if (this.formNewPass.valid) {
 
@@ -41,7 +41,7 @@ export class NovaSenhaComponent implements OnInit {
         this.clearForm();
       },
         response => {
-          //this.notificationService.notify('Erro ao cadastrar, verifique os campos !', false);
+          // this.notificationService.notify('Erro ao cadastrar, verifique os campos !', false);
           this.notificationService.notify(response.message, false);
         }
       );
