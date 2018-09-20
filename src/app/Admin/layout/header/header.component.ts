@@ -2,8 +2,8 @@ import { NotificationService } from './../../../shared/messages/notification.ser
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { LoginService } from './../../../FrontEnd/login/form-login/login.service';
 import { HeaderService } from './header.service';
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'rt-header',

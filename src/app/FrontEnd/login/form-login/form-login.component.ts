@@ -1,6 +1,5 @@
-import { NotificationService } from '../../../shared/messages/notification.service';
-import { LoginService } from '@FrontEnd/login/form-login/login.service';
 import { DataLogin } from '@FrontEnd/login/data-login.model';
+import { NotificationService } from '../../../shared/messages/notification.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, Output } from '@angular/core';
@@ -8,6 +7,7 @@ import { map } from 'rxjs/operators';
 import { EventEmitter } from 'protractor';
 import { User } from '@FrontEnd/login/form-login/user.model';
 import { isError } from 'util';
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'rt-form-login',
@@ -26,7 +26,6 @@ export class FormLoginComponent implements OnInit {
   private loginService: LoginService, private notificationService: NotificationService) { }
 
   ngOnInit() {
-
     if (this.loginService.userIsAutenticade()) {
       this.router.navigate(['/admin']);
     }
@@ -40,20 +39,9 @@ export class FormLoginComponent implements OnInit {
   login(dados: DataLogin) {
 
     if (dados.email && dados.password) {
-      this.notificationService.notify('', true);
-
-      this.loginService.login(dados)
-      .subscribe(
-        user => {
-          this.notificationService.notify('Seja Bem Vindo');
-          this.isSuccess(user);
-        },
-        response => {
-          this.notificationService.notify(response.error.message, false);
-          this.clearForm();
-          // this.notificationService.notify(response.error.message);
-        }
-      );
+      //this.notificationService.notify('', true);
+      this.loginService.login(dados);
+      
     } else {
       this.notificationService.notify('Campos Obrigátorios' , false);
     }

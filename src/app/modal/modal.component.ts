@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NotificationService } from '../shared/messages/notification.service';
-import { ModalService } from './modal.service';
-import { ResultsService } from '@FrontEnd/results/results.service';
+import { ResultsService } from '../services/results.service';
 import { Modal } from './modal.model';
 
 import { ModalNotificationService } from '../shared/messages/modal.service';
+import { ForgetDownloadService } from '../services/forget_download.service';
 
 @Component({
   selector: 'rt-modal',
@@ -16,17 +16,22 @@ export class ModalComponent implements OnInit {
 
   recuperarSenhaF: FormGroup;
   message: Modal;
+  show = false
 
   constructor(private fb: FormBuilder,
               private mService: ModalNotificationService,
-              private modalService: ModalService,
-              private resultsService: ResultsService) {}
+              private resultsService: ResultsService,
+              private forgetdownload: ForgetDownloadService) {}
 
   nameFile;
+
   ngOnInit() {
+
     this.mService.notifier.subscribe( message => {
-      this.message = message;
+      this.message = message.work;
+      this.show = message.value
     });
+
     this.recuperarSenhaF = this.fb.group({
       recuperar_senha: this.fb.control('', [Validators.required, Validators.email])
     });
@@ -36,7 +41,7 @@ export class ModalComponent implements OnInit {
 
   forget_pass(email) {
 
-    this.modalService.forget_pass(email)
+    this.forgetdownload.forget_pass(email)
     .subscribe(
       status => console.log(status)
     );
@@ -44,13 +49,10 @@ export class ModalComponent implements OnInit {
   }
 
   downloadFile() {
-    // console.log(this.nameFile);
-
-    this.modalService.downloadFile(this.nameFile).subscribe(
+    this.forgetdownload.downloadFile(this.nameFile).subscribe(
       datas => datas,
       response => console.log(response.message)
     );
-
   }
 
 }

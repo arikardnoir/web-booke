@@ -23,7 +23,7 @@ export class FormCadastroComponent implements OnInit {
       name_university: this.formBuilder.control('', [Validators.required]),
       initials: this.formBuilder.control('', [Validators.required]),
       fundation_date: this.formBuilder.control('', [Validators.required]),
-      university_code: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
+      university_code: this.formBuilder.control('', [Validators.required, Validators.minLength(1)]),
       city: this.formBuilder.control('', [Validators.required]),
       province: this.formBuilder.control('', [Validators.required]),
       image: this.formBuilder.control('', [Validators.required]),
@@ -39,14 +39,12 @@ export class FormCadastroComponent implements OnInit {
     // formData.append('foto', this.imgAvatar);
   }
 
-   uploadImage(event) {
-     this.selectedFile = <File>event.target.files[0];
-     // console.log(this.selectedFile);
-   }
+  uploadImage(event) {
+    this.selectedFile = <File>event.target.files[0];
+  }
 
   getDados(dados) {
-    console.log(dados);
-    // this.notificationService.notify('', true);
+
     if (this.formCadastro.valid) {
 
       const fd = new FormData();
@@ -61,9 +59,15 @@ export class FormCadastroComponent implements OnInit {
       fd.append('status', dados.status);
       fd.append('password', dados.password);
       fd.append('password_confirmation', dados.password_confirmation);
-      console.log('============');
-      console.log(dados);
-      this._userService.post(fd);
+
+      this._userService.post(fd).subscribe( 
+        data => {
+          this.notificationService.notify(data);
+        },
+        response => {
+          this.notificationService.notify(response.error);
+        }
+      );
 
     } else {
       return this.notificationService.notify('Campos obrigatórios', false);

@@ -1,9 +1,9 @@
 <!-- Modal -->
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <div *ngIf="message.title">
+      <div class="modal-header" *ngIf="show">
+        <div>
           <h4>{{ message.title }}</h4>
           <p><b>Autor:</b>  {{ message.author }}</p>
           <p><b>Curso:</b> {{ message.course }}</p>
@@ -18,22 +18,24 @@
           <p><a href="http://localhost/repositorio-de-trabalhos/API/public/api/v2/workout/file/{{message.file }}">Fazer Dowload do Arquivo</a></p>
         </div>
       </div>
-      <div class="modal-body" *ngIf="!message.title">
-        <div>
-          <p>
-            Digite seu endereço de e-mail e enviaremos um link para redefinir sua senha.
-          </p>
+      <div *ngIf="!show">
+        <div class="modal-body">
           <div>
-            <form [formGroup]="recuperarSenhaF">
-              <input type="email" placeholder="Endereço de Email" formControlName="recuperar_senha" #email>
-            </form>
+            <p>
+              Digite seu endereço de e-mail e enviaremos um link para redefinir sua senha.
+            </p>
+            <div>
+              <form [formGroup]="recuperarSenhaF">
+                <input type="email" placeholder="Endereço de Email" formControlName="recuperar_senha" #email>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="modal-footer" *ngIf="!message.title">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" (click)="forget_pass(recuperarSenhaF.value)">Enviar</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="forget_pass(recuperarSenhaF.value)">Enviar</button>
+        </div>
       </div>
     </div>
   </div>
-</div> -->
+</div>

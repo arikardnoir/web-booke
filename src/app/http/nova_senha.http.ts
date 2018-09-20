@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { ApiHttp } from './api.http';
 
 @Injectable()
-export class LoginHttp { 
+export class NovaSenhaHttp { 
 
     constructor(public api: ApiHttp) {}
 
     post(data) {
-        return this.api.post('account/auth', data);
+        return this.api.post('v2/newpass', data);
     }
 }

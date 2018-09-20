@@ -8,6 +8,12 @@ export class NotificationService {
     b = new EventEmitter<any>();
 
     notify(message: any, bool?: any) {
+
+        if(typeof(message) == 'object') {
+            this.notifier.emit(message.message);
+            return;
+        }
+
         this.notifier.emit(message);
         this.b.emit(bool);
     }

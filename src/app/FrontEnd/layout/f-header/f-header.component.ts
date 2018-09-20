@@ -1,10 +1,9 @@
-import { SearchService } from './../../search/search.service';
 import { state } from '@angular/animations';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, AfterContentChecked } from '@angular/core';
-import { LoginService } from '../../login/form-login/login.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { NotificationService } from '../../../shared/messages/notification.service';
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'rt-f-header',
@@ -21,31 +20,38 @@ export class FHeaderComponent implements OnInit, AfterContentChecked {
 
   constructor(private route: ActivatedRoute,
     private loginService: LoginService, private router: Router,
-    private searchService: SearchService, private fb: FormBuilder,
+     private fb: FormBuilder,
     private notificationService: NotificationService) {
     }
 
   ngOnInit() {
     this.searchTop = this.fb.group({ search: this.fb.control('') });
-    this.valueSearch = this.router.routerState.snapshot.url;
+    let pesquisa = JSON.parse(sessionStorage.getItem('pesquisa'));
+    this.valueSearch = pesquisa.search;
+
+    setTimeout(() => sessionStorage.removeItem('pesquisa'), 2000);
 
     this.token = this.loginService.getUser().token;
     this.nome = this.loginService.getUser().nome;
   }
 
   _searchTop(keysearch: string) {
+    console.log(keysearch.search);
     const value = keysearch.search;
+    console.log(value);
     // this.router.navigate(['/resultados', keysearch.search]);
     this.notificationService.notify(value.toString(), 'Ok');
   }
 
   ngAfterContentChecked() {
+
     if (this.router.routerState.snapshot.url.includes('search') ||
-    this.router.routerState.snapshot.url.includes('/login')) {
+      this.router.routerState.snapshot.url.includes('/login')) {
       this.hiddenLogo = true;
     } else {
       this.hiddenLogo = false;
     }
+
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RascunhoService } from './rascunho.service';
+import { RascunhoService } from '../../services/rascunho.service';
 
 @Component({
   selector: 'rt-rascunho',

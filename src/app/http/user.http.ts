@@ -7,8 +7,6 @@ export class UserHttp {
 
     post(data) {
         const req = this.api.post('v2/user', data);
-        console.log('http');
-        console.log(req);
         return req;
     }
 }

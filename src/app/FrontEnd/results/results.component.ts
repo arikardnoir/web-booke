@@ -1,8 +1,8 @@
+import { SearchService } from './../../services/search.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { SearchService } from '@FrontEnd/search/search.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
-import { ResultsService } from '@FrontEnd/results/results.service';
+import { ResultsService } from '../../services/results.service';
 import { NotificationService } from '../../shared/messages/notification.service';
 import { ModalNotificationService } from '../../shared/messages/modal.service';
 
@@ -15,11 +15,11 @@ export class ResultsComponent implements OnInit {
 
   public loading = false;
   filtroSearch: FormGroup;
-  constructor(private searchService: SearchService, private resultsService: ResultsService , private route: ActivatedRoute,
+  constructor(public searchService: SearchService, private resultsService: ResultsService , private route: ActivatedRoute,
     private fb: FormBuilder,
     private mService: ModalNotificationService, private notificationService: NotificationService) { }
 
-  @Input() works = [];
+  works = [];
 
   ngOnInit() {
     this.filtroSearch = this.fb.group({
@@ -46,11 +46,11 @@ export class ResultsComponent implements OnInit {
     this.loading = true;
     if (paramSearch) {
       this.searchService.searchAll(paramSearch).subscribe(
-        datas => this.iterarDados(datas),
-        response => console.log(response.message)
-      );
+        data => this.iterarDados(data)
+      )
+      this.loading = false;
     } else {
-      alert('Preencha corretamente o campo');
+      //alert('Preencha corretamente o campo');
       this.loading = false;
     }
   }
@@ -62,18 +62,21 @@ export class ResultsComponent implements OnInit {
         datas => this.iterarDados(datas),
         response => console.log(response.message)
       );
+      this.loading = false;
     } else if (!(dados.key_search.length === 0)) {
       this.resultsService.showWorkKey(dados.key_search).subscribe(
         datas => this.iterarDados(datas),
         response => console.log(response.message)
       );
+      this.loading = false;
     } else {
-      console.log('Erro Total..');
+      this.loading = false;
+      //console.log('Erro Total..');
     }
   }
 
   iterarDados(datas) {
-    this.loading = false;
+    //this.loading = false;
 
     if (this.works.length !== 0) {
       this.works = [];
@@ -83,13 +86,16 @@ export class ResultsComponent implements OnInit {
       this.works.push(datas.data[i]);
       datas.data[i].keywords = datas.data[i].keywords.split(';');
     }
+
+    return this.works;
   }
 
   showResumo(resume) {
     for (let i = 0; i < this.works.length; i++) {
       if (this.works[i].id === resume) {
         const work = this.works[i];
-        this.mService.notify(work);
+
+        this.mService.notify({work:work, value: true});
         this.resultsService.setWork(work.id, work.title, work.file);
 
       }

@@ -4,8 +4,7 @@ import { NotificationService } from '../../shared/messages/notification.service'
 
 @Component({
   selector: 'rt-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit, AfterContentChecked {
 

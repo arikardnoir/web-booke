@@ -2,7 +2,7 @@
     <div class="h-box">
         <div class="h_box-item h_left">
             <span class="menu_hanburger" style="display: none;"></span>
-            <i class="fa fa-search fa-2x"></i>
+            <i class="fa fa-filter fa-2x"></i>
         </div>
         <div class="h_box-item h_center">
             <a [routerLink]="['/']" class="logo">
@@ -10,9 +10,11 @@
             </a>
             <div class="searchInput" *ngIf="!hiddenLogo">
                 <form [formGroup]="searchTop">
-                    <input type="text" formControlName="search" (keyup.enter)="_searchTop(searchTop.value)" value="{{ valueSearch }}">
+                    <div class="box-search-top">
+                        <input type="text" formControlName="search" (keyup.enter)="_searchTop(searchTop.value)" value="{{ valueSearch }}">
+                        <i class="fa fa-search"></i>
+                    </div>
                 </form>
-                <i class="fa fa-search"></i>
             </div>
         </div>
         <div class="h_box-item h_right">

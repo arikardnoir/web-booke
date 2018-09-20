@@ -2,10 +2,8 @@ import { NotificationService } from './../../shared/messages/notification.servic
 import { user } from './../../FrontEnd/login/form-login/user.model';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { PerfilService } from './perfil.service';
-import { LoginService } from '../../FrontEnd/login/form-login/login.service';
 import { User } from '../../FrontEnd/login/form-login/user.model';
-import { PerfilInstituicaoService } from './perfil-instituicao.service';
+import { PerfilService } from '../../services/perfil.I.service';
 
 
 
@@ -19,7 +17,7 @@ export class PerfilInstituicaoComponent implements OnInit {
   formPerfil: FormGroup;
   label = 'Ver Perfil do Administrador';
   img: any;
-  constructor(private perfilService: PerfilInstituicaoService,
+  constructor(private perfilService: PerfilService,
     private fb: FormBuilder,
     private notificationService: NotificationService) { }
 
@@ -38,18 +36,16 @@ export class PerfilInstituicaoComponent implements OnInit {
     });
 
     this.getDados();
-    this.imageProfile();
+    // this.imageProfile();
   }
 
   getDados() {
     this.perfilService.me().subscribe(users => {
-      this.notificationService.notify('', true);
       this.preencherForm(users.user);
     });
   }
 
   preencherForm(dados) {
-    console.log(dados);
     this.formPerfil.patchValue({
       name_university: dados.name_university,
       initials: dados.initials,
@@ -63,18 +59,25 @@ export class PerfilInstituicaoComponent implements OnInit {
   }
 
   guardarAlteracoes(dados) {
-    this.perfilService.guardarAlteracoes(dados).subscribe(
-
-      datas => console.log(datas),
-      response => console.log(response)
-    );
+    if(this.formPerfil.valid) {
+      this.perfilService.guardarAlteracoes(dados).subscribe(
+        datas => {
+          this.notificationService.notify('Alteraçoões guardadas com sucesso.');
+        },
+        response => {
+          
+        }
+      );
+    } else {
+      this.notificationService.notify('Campos obrigatórios.');
+    }
   }
 
-  imageProfile() {
-    this.perfilService.imageProfile().subscribe(
-      datas => this.img = datas,
-      response => console.log(response)
-    );
-  }
+  // imageProfile() {
+  //   this.perfilService.imageProfile().subscribe(
+  //     datas => this.img = datas,
+  //     response => console.log(response)
+  //   );
+  // }
 
 }

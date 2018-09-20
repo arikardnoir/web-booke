@@ -1,7 +1,7 @@
+import { LoginService } from './../services/login.service';
 import { NotificationService } from '../shared/messages/notification.service';
 
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '@FrontEnd/login/form-login/login.service';
 import { ActiveService } from './active.service';
 import { ActivatedRoute, Router } from '@angular/router';
 

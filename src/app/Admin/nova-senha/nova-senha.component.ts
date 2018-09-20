@@ -2,13 +2,12 @@ import { NotificationService } from '../../shared/messages/notification.service'
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '@FrontEnd/login/form-login/login.service';
-import { NovaSenhaService } from './nova-senha.service';
+import { LoginService } from '../../services/login.service';
+import { NovaSenhaService } from '../../services/nova_senha.service';
 
 @Component({
   selector: 'rt-nova-senha',
-  templateUrl: './nova-senha.component.html',
-  styleUrls: ['./nova-senha.component.css']
+  templateUrl: './nova-senha.component.html'
 })
 export class NovaSenhaComponent implements OnInit {
 
@@ -36,17 +35,17 @@ export class NovaSenhaComponent implements OnInit {
 
       this.novaSenhaService.newPass(data).subscribe(data => {
 
-        this.notificationService.notify(data.message, false);
-        console.log(data);
+        this.notificationService.notify(data, false);
         this.clearForm();
       },
         response => {
-          // this.notificationService.notify('Erro ao cadastrar, verifique os campos !', false);
-          this.notificationService.notify(response.message, false);
+          this.notificationService.notify(response.message);
+          this.clearForm();
         }
       );
     } else {
-       this.notificationService.notify('Campos obrigatórios', false);
+      this.notificationService.notify('Campos obrigatórios', false);
+      this.clearForm();
     }
 
   }

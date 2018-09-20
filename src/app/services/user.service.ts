@@ -16,7 +16,7 @@ export class UserService {
     data: DataCadastro;
 
     post(data) {
-        this._userHttp.post(data).subscribe( d => console.log('user service'));
+        return this._userHttp.post(data);
     }
 
     // .subscribe(data => {
