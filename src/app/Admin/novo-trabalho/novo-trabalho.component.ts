@@ -53,46 +53,36 @@ export class NovoTrabalhoComponent implements OnInit {
   }
 
   createNewWork(dados) {
-    if (this.formTrabalho.valid) {
-      const fd = new FormData();
-      fd.append('title', dados.title);
-      fd.append('subtitle', dados.subtitle);
-      fd.append('author', dados.author);
-      fd.append('author2', dados.author2);
-      fd.append('author3', dados.author3);
-      fd.append('publication_city', dados.publication_city);
-      fd.append('publication_year', dados.publication_year);
-      fd.append('volume', dados.volume);
-      fd.append('type', dados.type);
-      fd.append('page_number', dados.page_number);
-      fd.append('name_university', dados.name_university);
-      fd.append('course', dados.course);
-      fd.append('campus', dados.campus);
-      fd.append('file', this.selectedFile, this.selectedFile.name);
-      fd.append('university_id', this.id);
-      fd.append('keywords', dados.keywords);
-      fd.append('resume', dados.resume);
 
-      //console.log(this.selectedFile.name);
+    const fd = new FormData();
+    fd.append('title', dados.title);
+    fd.append('subtitle', dados.subtitle);
+    fd.append('author', dados.author);
+    fd.append('author2', dados.author2);
+    fd.append('author3', dados.author3);
+    fd.append('publication_city', dados.publication_city);
+    fd.append('publication_year', dados.publication_year);
+    fd.append('volume', dados.volume);
+    fd.append('type', dados.type);
+    fd.append('page_number', dados.page_number);
+    fd.append('name_university', dados.name_university);
+    fd.append('course', dados.course);
+    fd.append('campus', dados.campus);
+    fd.append('file', this.selectedFile, this.selectedFile.name);
+    fd.append('university_id', this.id);
+    fd.append('keywords', dados.keywords);
+    fd.append('resume', dados.resume);
 
-      if (fd) {
+    //console.log(this.selectedFile.name);
 
-        this.newWorkService.createNewWork(fd)
-          .subscribe(
-            data => {
-              this.notificationService.notify(data.message);
-              if (data.status) {
-                this.clearForm();
-              }
-            }
-            ,
-            response => { console.log('Erro ao add novo trabalho') }//this.notificationService.notify(response.message)
-          );
-      }
-
-    } else {
-      this.notificationService.notify('Verifique se os campos estão corretamente preenchidos', false);
-    }
+    this.newWorkService.createNewWork(fd)
+      .subscribe(
+        data => {
+          this.notificationService.notify(data.message);
+        }
+        ,
+        response => this.notificationService.notify(response.message)
+      );
   }
 
   preencherForm() {

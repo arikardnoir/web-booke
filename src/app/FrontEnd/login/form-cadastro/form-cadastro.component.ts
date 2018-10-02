@@ -60,17 +60,20 @@ export class FormCadastroComponent implements OnInit {
       fd.append('password', dados.password);
       fd.append('password_confirmation', dados.password_confirmation);
 
-      this._userService.post(fd).subscribe( 
-        data => {
-          this.notificationService.notify(data);
-        },
+      this.cadastroService.getDados(fd).subscribe(data => {
+        //this.notificationService.notify('Universidade cadastrado com sucesso !');
+        console.log(data);
+        this.notificationService.notify(data.message);
+        this.clearForm();
+      },
         response => {
-          this.notificationService.notify(response.error);
+          //this.notificationService.notify('Erro ao cadastrar, verifique os campos !', false);
+          this.notificationService.notify(response.message);
         }
       );
 
     } else {
-      return this.notificationService.notify('Campos obrigatórios', false);
+      return this.notificationService.notify('Campos obrigatórios');
     }
   }
 
