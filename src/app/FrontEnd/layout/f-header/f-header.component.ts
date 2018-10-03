@@ -17,7 +17,7 @@ export class FHeaderComponent implements OnInit, AfterContentChecked {
   valueSearch;
   token;
   nome;
-
+  
   constructor(private route: ActivatedRoute,
     private loginService: LoginService, private router: Router,
      private fb: FormBuilder,
