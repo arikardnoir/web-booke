@@ -20,12 +20,14 @@ export class FormLoginComponent implements OnInit {
   logado;
   status;
   public loading = false;
-  // @Output() logado = false;
-  // mudouValor = new EventEmitter();
-  constructor(private router: Router, private formBuilder: FormBuilder,
-  private loginService: LoginService, private notificationService: NotificationService) { }
+
+  constructor(private router: Router,
+    private formBuilder: FormBuilder,
+    private loginService: LoginService,
+    private notificationService: NotificationService) { }
 
   ngOnInit() {
+    
     if (this.loginService.userIsAutenticade()) {
       this.router.navigate(['/admin']);
     }
@@ -36,23 +38,25 @@ export class FormLoginComponent implements OnInit {
     });
   }
 
-  login(dados: DataLogin) {
 
+  login(dados: DataLogin) {
+    this.loading = true;
     if (dados.email && dados.password) {
-      //this.notificationService.notify('', true);
       this.loginService.login(dados);
-      
     } else {
-      this.notificationService.notify('Campos Obrigátorios' , false);
+      this.loading = false;
+      this.notificationService.notify('Campos Obrigátorios', false);
     }
   }
 
   isSuccess(user) {
     if (user.status) {
       this.status = this.loginService.verificarLogin(user.status);
-      this.loginService.setUser({name_university: user.user.name_university, initials: user.user.initials,
-         id: user.user.id,
-                            image: user.user.image, email: user.user.email, token: user.token});
+      this.loginService.setUser({
+        name_university: user.user.name_university, initials: user.user.initials,
+        id: user.user.id,
+        image: user.user.image, email: user.user.email, token: user.token
+      });
     }
   }
 
