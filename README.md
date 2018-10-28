@@ -1,27 +1,46 @@
-# RepositorioDeTrabalhos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-## Development server
+# Booke
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Começando
+Essas instruções farão com que você tenha uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste. Veja a implantação de notas sobre como implantar o projeto em um sistema ativo.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Pré-requisitos
+Caso não tenhas o angular instalado em sua máquina, siga os seguintes passos:
 
-## Build
+```js
+npm install -g ionic
+```
+Para mais detalhes, visite a [página](https://ionicframework.com/getting-started#cli)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+OBS: O "-g" presente no comando de instalação, quer dizer que este framework será instalado globalmente na nossa máquina, logo, devemos instala-ló como super usuário.
 
-## Running unit tests
+ex: para linux e mac
+```js
+sudo npm install -g ionic
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+DICA: Para o Windows, deve-se abrir o terminal como administrador.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Baixando o Projeto
 
-## Further help
+- copie o código abaixo e cole no terminal:
+```js
+    git clone https://github.com/filipetristao777/app-eloverde.git
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Após clonar o projeto para a sua máquina, navegue até a pasta do projeto, e na raíz do mesmo execute o seguinte comando:
+```js
+    git submodule update --init --recursive
+```
+
+O comando acima apresentado, vai clonar para o nosso projeto um submodulo que será compartilhado entre a "Aplicação Web" e o "App".
+
+
+- Para rodar o projeto, execute o comando abaixo:
+```js
+    ionic serve
+```
+
