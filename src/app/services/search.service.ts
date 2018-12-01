@@ -28,7 +28,7 @@ export class SearchService {
 //   }
 
 searchAll(keysearch: String) {
-  return this.searchHttp.getAll(keysearch);
+  return this.searchHttp.getAll(keysearch)
 }
 
   searchName(data: DataSearch) {

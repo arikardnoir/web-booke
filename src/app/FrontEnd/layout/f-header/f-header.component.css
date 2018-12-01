@@ -19,17 +19,16 @@
   width: 90%;
 }
 .box-search-top i {
-  background: #686F5F;
+  background: #2f2a53;
   height: 38px;
   width: 10%;
-  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 4px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  color: #666;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -61,11 +60,12 @@
 }
 
 .header {
-  height: 60px;
+ height: 60px;
   background: white;
   padding: 10px 15px;
   /* box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1); */
-  display: block;
+  display: flex;
+  align-items: center;
   position: relative;
   border-bottom: 1px solid rgba(20, 23, 28, 0.2);
   z-index: 1010;
@@ -159,9 +159,20 @@
 .fa-bell,
 .fa-heart,
 .b_user-avatar,
-.fa-search
+/* .fa-search, */
+/*.fa-filter*/
 {
   display: none;
+}
+
+.fa-bell,
+.fa-heart,
+.b_user-avatar,
+.fa-search,
+.fa-filter
+{
+  cursor: pointer;
+  color: #2f2a53;
 }
 
 
@@ -171,9 +182,9 @@
   display: none;
 }
 
-.b_btn-nav {
+/* .b_btn-nav {
   display: none;
-}
+} */
 
 .action-search span,
 .action-user,
@@ -210,12 +221,13 @@
   }
 
   .menu_hanburger,
-  .fa-filter {
+  .fa-filter,
+  .fa-search {
     display: none;
   }
 
   .h-box {
-    width: 720px;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -232,22 +244,17 @@
 
   .searchInput {
     width: 450px;
-    position: absolute;
+    /* position: absolute;
     top: -10px;
     left: 90px;
     right: 0;
-    bottom: 0;
+    bottom: 0; */
     font-size: 1.2em;
     display: block;
   }
 
   .logo {
     width: 110px;
-    position: absolute;
-    top: 6px;
-    left: 0;
-    right: 0;
-    bottom: 0;
     font-size: 1.2em;
   }
 
@@ -274,9 +281,13 @@
   }
 }
 
+.mr-t {
+  margin-top: 0;
+}
+
 @media (min-width: 992px) {
   .h-box {
-    width: 960px;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -292,7 +303,7 @@
 
 @media (min-width: 1200px) {
   .h-box {
-    width: 1140px;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -347,5 +358,9 @@
 }
 
 .search-mobile {
+  display: none;
+}
+
+.hide {
   display: none;
 }
