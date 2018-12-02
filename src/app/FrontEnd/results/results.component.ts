@@ -27,7 +27,6 @@ export class ResultsComponent implements OnInit {
       key_search: this.fb.control('')
     });
 
-
     this.route.params.subscribe(
       params => {
         const paramSearch = params['search'];
@@ -104,4 +103,3 @@ export class ResultsComponent implements OnInit {
   }
 
 }
-
