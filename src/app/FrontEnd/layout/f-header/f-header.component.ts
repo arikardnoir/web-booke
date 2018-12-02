@@ -35,14 +35,17 @@ export class FHeaderComponent implements OnInit, AfterContentChecked {
     this.token = this.loginService.getUser().token;
     this.nome = this.loginService.getUser().nome;
 
+    document.querySelector('.fa-filter').addEventListener('click', () => {
+      document.querySelector('.content-filter').classList.toggle('hide');
+    });
   }
 
   _searchTop(keysearch: string) {
     console.log(keysearch.search);
     const value = keysearch.search;
     console.log(value);
-    // this.router.navigate(['/resultados', keysearch.search]);
-    this.notificationService.notify(value.toString(), 'Ok');
+    this.router.navigate(['/resultados', keysearch.search]);
+    //this.notificationService.notify(value.toString(), 'Ok');
   }
 
   ngAfterContentChecked() {

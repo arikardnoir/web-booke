@@ -27,9 +27,9 @@ export class SearchService {
 
 //   }
 
-  searchAll(keysearch: String) {
-    return this.searchHttp.getAll(keysearch);
-  }
+searchAll(keysearch: String) {
+  return this.searchHttp.getAll(keysearch)
+}
 
   searchName(data: DataSearch) {
     this.searchHttp.getName(data.keysearch).subscribe(data => console.log(data));

@@ -14,7 +14,9 @@ import { ModalNotificationService } from '../../shared/messages/modal.service';
 export class ResultsComponent implements OnInit {
 
   public loading = false;
+  public valueSearchMobile: any = '';
   filtroSearch: FormGroup;
+
   constructor(public searchService: SearchService, private resultsService: ResultsService , private route: ActivatedRoute,
     private fb: FormBuilder,
     private mService: ModalNotificationService, private notificationService: NotificationService) { }
@@ -44,10 +46,11 @@ export class ResultsComponent implements OnInit {
   getWorks(paramSearch) {
     this.loading = true;
     if (paramSearch) {
-      this.searchService.searchAll(paramSearch).subscribe(
-        data => this.iterarDados(data)
-      )
-      this.loading = false;
+      this.searchService.searchAll(paramSearch).subscribe(data => {
+        this.loading = false;
+        this.iterarDados(data)
+      })
+      
     } else {
       //alert('Preencha corretamente o campo');
       this.loading = false;
@@ -102,4 +105,9 @@ export class ResultsComponent implements OnInit {
 
   }
 
+  search_mobile(){
+    this.getWorks(this.valueSearchMobile);
+  }
+
 }
+
