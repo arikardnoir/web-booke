@@ -25,6 +25,7 @@
     cursor: pointer;
 }
 
+.login:focus{color:#2f2a53;}
 
 .content-main{
     min-height: 100%;

@@ -33,7 +33,7 @@ export class ModalComponent implements OnInit {
     });
 
     this.recuperarSenhaF = this.fb.group({
-      recuperar_senha: this.fb.control('', [Validators.required, Validators.email])
+      email: this.fb.control('', [Validators.required, Validators.email])
     });
 
     this.nameFile = this.resultsService.getWork().file;
