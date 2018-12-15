@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost/Booke/api-booke/public/api'
+  api: 'http://localhost:85/Booke/api-booke/public/api'
+  
 };
 
 /*
