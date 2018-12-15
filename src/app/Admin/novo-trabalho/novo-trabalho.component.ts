@@ -12,7 +12,6 @@ import { NewWorkService } from '../../services/new_work.service';
 })
 export class NovoTrabalhoComponent implements OnInit {
 
-
   tipoTrabalho = ['artigos', 'tcc', 'teses', 'dissertacoes', 'livros'];
   id = this.loginService.getUser().id;
   formTrabalho: FormGroup;
@@ -33,12 +32,12 @@ export class NovoTrabalhoComponent implements OnInit {
       author3: this.fb.control(''),
       publication_city: this.fb.control('', [Validators.required]),
       publication_year: this.fb.control('', [Validators.required]),
-      volume: this.fb.control('', [Validators.required]),
+      volume: this.fb.control(''),
       type: this.fb.control('', [Validators.required]),
       page_number: this.fb.control('', [Validators.required]),
       name_university: this.fb.control('', [Validators.required]),
       course: this.fb.control('', [Validators.required]),
-      campus: this.fb.control('', [Validators.required]),
+      campus: this.fb.control(''),
       file: this.fb.control('', [Validators.required]),
       keywords: this.fb.control('', [Validators.required]),
       resume: this.fb.control('', [Validators.required])
@@ -84,8 +83,7 @@ export class NovoTrabalhoComponent implements OnInit {
               if (data.status) {
                 this.clearForm();
               }
-            }
-            ,
+            },
             response => { console.log('Erro ao add novo trabalho') }//this.notificationService.notify(response.message)
           );
       }
@@ -136,6 +134,5 @@ export class NovoTrabalhoComponent implements OnInit {
 
     });
   }
-
 
 }
