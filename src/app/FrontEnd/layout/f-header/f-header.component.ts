@@ -17,22 +17,24 @@ export class FHeaderComponent implements OnInit, AfterContentChecked {
   valueSearch;
   token;
   nome;
-
+  
   constructor(private route: ActivatedRoute,
     private loginService: LoginService, private router: Router,
      private fb: FormBuilder,
-    private notificationService: NotificationService) {
+    private notificationService: NotificationService,
+    private activatedRoute: ActivatedRoute) {
     }
 
   ngOnInit() {
     this.searchTop = this.fb.group({ search: this.fb.control('') });
     let pesquisa = JSON.parse(sessionStorage.getItem('pesquisa'));
-    this.valueSearch = pesquisa.search;
+    //this.valueSearch = pesquisa.search;
 
     setTimeout(() => sessionStorage.removeItem('pesquisa'), 2000);
 
     this.token = this.loginService.getUser().token;
     this.nome = this.loginService.getUser().nome;
+
   }
 
   _searchTop(keysearch: string) {

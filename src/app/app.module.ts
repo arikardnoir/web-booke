@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -41,6 +41,9 @@ import { ResultsHttp } from './http/results.http';
 import { SharedModule } from './shared/shared.module';
 import { ForgetDownloadHttp } from './http/forget_download.http';
 import { ForgetDownloadService } from './services/forget_download.service';
+import { ApplicationErrorHandler } from './app.error-handler';
+import { LogoutHttp } from './http/logout.http';
+import { LogoutService } from './services/logout.service';
 
 @NgModule({
   declarations: [
@@ -90,6 +93,7 @@ import { ForgetDownloadService } from './services/forget_download.service';
               ResultsHttp,
               ForgetDownloadHttp,
               ForgetDownloadService,
+              {provide: ErrorHandler, useClass: ApplicationErrorHandler},
               {provide: HTTP_INTERCEPTORS, useClass: JWTInterceptor, multi: true},
             ],
   bootstrap: [AppComponent]

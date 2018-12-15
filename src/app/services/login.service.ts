@@ -18,6 +18,7 @@ export class LoginService {
 
   user: User;
   status;
+  loading = true;
 
   //private urlLogin = 'http://localhost:85/api-booke/public/api/account/auth';
 
@@ -39,6 +40,7 @@ export class LoginService {
   login(dados: DataLogin) {
     this.http.post({ email: dados.email, password: dados.password }).subscribe(
         user => {
+          this.loading = false;
           this.notificationService.notify('Seja Bem Vindo');
           setTimeout(() => this.isSuccess(user), 500);
         },

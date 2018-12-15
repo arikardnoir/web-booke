@@ -22,15 +22,16 @@
                 <a href=""></a>
             </div>
             <div class="b_btn-nav">
-            <a [routerLink]="['/login']" class="login" *ngIf="!token">
-            Entrar
-            </a>
-            
-            <a [routerLink]="['/admin']" class="loginUser" *ngIf="token">
-            {{ nome }}
-            </a>
-        
-        </div>
+                <a [routerLink]="['/login']" class="login" *ngIf="!token">
+                    Entrar
+                </a>
+
+                <a [routerLink]="['/admin']" class="loginUser" *ngIf="token">
+                    {{ nome }}
+                </a>
+
+            </div>
+            <i class="fa fa-search fa-2x"></i>
         </div>
     </div>
 </header>

@@ -28,7 +28,9 @@ import { ApiHttp } from "../http/api.http";
 import { HttpClientModule } from "@angular/common/http";
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { JWTInterceptor } from "../interceptors/jwt.interceptor";
+import { JWTInterceptor } from '../interceptors/jwt.interceptor';
+import { LogoutHttp } from '../http/logout.http';
+import { LogoutService } from '../services/logout.service';
 
 
 const ROUTES: Routes = [
@@ -73,6 +75,8 @@ const ROUTES: Routes = [
         NovaSenhaService,
         NovaSenhaHttp,
         ApiHttp,
+        LogoutHttp,
+        LogoutService,
         {provide: HTTP_INTERCEPTORS, useClass: JWTInterceptor, multi: true},
     ]
 })

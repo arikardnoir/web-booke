@@ -1,21 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { log } from 'util';
+import { LogoutService } from '../../../services/logout.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeaderService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private logoutService: LogoutService) {}
 
-  urlLogout = 'https://api-booke.herokuapp.com/api/account/logout';
-
-  logout(): Observable<any> {
-
-    return this.http.get<any>(this.urlLogout).pipe(status => status);
-
-  }
+  // logout() {
+  //   this.logoutService.logout();
+  // }
 }

@@ -1,12 +1,12 @@
-// import { Injectable } from '@angular/core';
-// import { ApiHttp } from './api.http';
+import { Injectable } from '@angular/core';
+import { ApiHttp } from './api.http';
 
-// @Injectable()
-// export class LoginHttp { 
+@Injectable()
+export class LogoutHttp { 
 
-//     constructor(public api: ApiHttp) {}
+    constructor(public api: ApiHttp) {}
 
-//     post(data) {
-//         return this.api.post('account/auth', data);
-//     }
-// }
+    get() {
+        return this.api.get('account/logout');
+    }
+}

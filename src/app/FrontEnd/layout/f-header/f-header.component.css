@@ -158,7 +158,9 @@
 
 .fa-bell,
 .fa-heart,
-.b_user-avatar {
+.b_user-avatar,
+.fa-search
+{
   display: none;
 }
 
