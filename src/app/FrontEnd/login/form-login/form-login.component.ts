@@ -38,7 +38,6 @@ export class FormLoginComponent implements OnInit {
     });
   }
 
-
   login(dados: DataLogin) {
     this.loading = true;
     if (dados.email && dados.password) {
