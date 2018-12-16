@@ -43,7 +43,7 @@ export class NovoTrabalhoComponent implements OnInit {
       resume: this.fb.control('', [Validators.required])
     });
 
-    this.preencherForm();
+  //this.preencherForm();
 
   }
 
@@ -93,26 +93,26 @@ export class NovoTrabalhoComponent implements OnInit {
     }
   }
 
-  preencherForm() {
-    this.formTrabalho.patchValue({
+  // preencherForm() {
+  //   this.formTrabalho.patchValue({
 
-      title: 'Mineracao de dados de Pessoas Com Deficiencia',
-      subtitle: 'Na Apae de Criciuma',
-      author: 'Simiao Das Palmas',
-      author2: 'Carlos Maluco',
-      author3: 'Euclides Mais Maluco',
-      publication_city: 'Luanda',
-      publication_year: '2018-07-01',
-      volume: '2',
-      page_number: '90',
-      name_university: 'Universidade Catolica de Angola',
-      course: 'Ciencia da Computacao',
-      campus: 'Engenharia',
-      keywords: 'Testes Testes Testes Testes ',
-      resume: 'Testes Testes Testes Testes Testes Testes Testes Testes Testes '
+  //     title: 'Mineracao de dados de Pessoas Com Deficiencia',
+  //     subtitle: 'Na Apae de Criciuma',
+  //     author: 'Simiao Das Palmas',
+  //     author2: 'Carlos Maluco',
+  //     author3: 'Euclides Mais Maluco',
+  //     publication_city: 'Luanda',
+  //     publication_year: '2018-07-01',
+  //     volume: '2',
+  //     page_number: '90',
+  //     name_university: 'Universidade Catolica de Angola',
+  //     course: 'Ciencia da Computacao',
+  //     campus: 'Engenharia',
+  //     keywords: 'Testes Testes Testes Testes ',
+  //     resume: 'Testes Testes Testes Testes Testes Testes Testes Testes Testes '
 
-    });
-  }
+  //   });
+  // }
 
   clearForm() {
     this.formTrabalho.patchValue({
