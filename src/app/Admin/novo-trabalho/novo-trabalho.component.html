@@ -1,0 +1,108 @@
+<div class="col-md-10">
+  <div class="box box-primary">
+    <div class="box-header with-border">
+      <h3 class="box-title">Novo Trabalho</h3>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    <form [formGroup]="formTrabalho">
+      <div class="box-body">
+        <rt-input label="Titulo" errorMessage="Campo Obrigatório">
+          <input type="text" class="" placeholder="Titulo" formControlName="title">
+        </rt-input>
+
+        <rt-input label="Subtitulo" errorMessage="Campo Obrigatório">
+          <input type="text" class="" placeholder="Subtitulo" formControlName="subtitle">
+        </rt-input>
+
+        <rt-input label="Nome do Autor" errorMessage="Campo Obrigatório">
+          <input type="text" class="" placeholder="Nome do Autor" formControlName="author">
+        </rt-input>
+
+        <rt-input label="Nome do Autor 2" errorMessage="Campo Obrigatório">
+          <input type="text" class="" placeholder="Nome do Autor 2" formControlName="author2">
+        </rt-input>
+
+        <rt-input label="Nome do Autor 3" errorMessage="Campo Obrigatório">
+          <input type="text" class="" placeholder="Nome do Autor 3" formControlName="author3">
+        </rt-input>
+
+        <div class="">
+          <div class="row">
+            <div class="col-xs-12 col-sm-4">
+              <rt-input label="Cidade" errorMessage="Campo Obrigatório">
+                <input type="text" class="" placeholder="Cidade" formControlName="publication_city">
+              </rt-input>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <rt-input label="Ano" errorMessage="Campo Obrigatório">
+                <input type="text" class="" placeholder="Ano" formControlName="publication_year">
+              </rt-input>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <rt-input label="Volume" errorMessage="Campo Obrigatório">
+                <input type="text" class="" placeholder="Volume" formControlName="volume">
+              </rt-input>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <select class="form-control" formControlName="type" required>  
+              <option value="" disabled selected>Selecione</option>           
+              <option *ngFor="let tipo of tipoTrabalho" [value]="tipo" >{{ tipo }}</option>
+            </select>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <rt-input label="Número de Páginas" errorMessage="Campo Obrigatório">
+              <input type="text" class="" placeholder="Número de Páginas" formControlName="page_number">
+            </rt-input>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <rt-input label="Nome da Instituição">
+              <input type="text" class="" placeholder="Nome da Instituição" value={{name}} formControlName="name_university" readonly>
+            </rt-input>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <rt-input label="Curso" errorMessage="Campo Obrigatório">
+              <input type="text" class="" placeholder="Curso" formControlName="course">
+            </rt-input>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <rt-input label="Faculdade" errorMessage="Campo Obrigatório">
+              <input type="text" class="" placeholder="Faculdade" formControlName="campus">
+            </rt-input>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <rt-input label="Arquivo" errorMessage="Campo Obrigatório">
+                <input type="file" class="" (change)="uploadFile($event)" placeholder="Arquivo" formControlName="file">
+            </rt-input>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <rt-input label="Palavras chaves" errorMessage="Campo Obrigatório">
+              <input type="text" class="" placeholder="Palavras chaves" formControlName="keywords">
+            </rt-input>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <textarea class="form-control" formControlName="resume" rows="3" placeholder="Resumo ..."></textarea>
+          </div>
+        </div>
+
+      </div>
+      <div class="box-footer">
+        <button type="submit" (click)="createNewWork(formTrabalho.value)" [disabled]="formTrabalho.invalid" class="btn btn-primary margin">Publicar</button>
+        <button type="submit" class="btn btn-primary margin">Salvar</button>
+      </div>
+    </form>
+
+  </div>
+</div>
