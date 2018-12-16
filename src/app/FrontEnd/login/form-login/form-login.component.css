@@ -6,7 +6,7 @@ input{
         border-bottom-color: #999;
         border-bottom-style: none;
         border-bottom-width: medium;
-    border-bottom: 1px solid #999;
+    /* border-bottom: 1px solid #999; */
     outline: none;
 }
 
