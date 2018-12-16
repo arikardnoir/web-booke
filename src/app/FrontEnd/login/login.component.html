@@ -1,0 +1,31 @@
+<div class="content-login">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 box-img">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="b-text">
+                <span>
+                  O booke é uma ferramenta de pesquisa online que permite a você pesquisar sobre trabalhos acadêmicos realizados em Angola, devidamente publicados em parceria com universidades e/ou órgãos de ensino, com a pretensão de oferecer ajuda referente a futuras pesquisas.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 hidden-md-down">
+            <div class="person-img-wrapper">
+              <img class="person-img" src="https://static.rfstat.com/renderforest/images/v1/signin/Character.png" alt="Character">
+              <img class="person-shadow" src="https://static.rfstat.com/renderforest/images/v1/signin/CharacterShadow.png" alt="Character shadow">
+            </div>
+          </div>
+      </div>
+      
+      <div class="col-xs-12 col-sm-5 b-form">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="my-container">
+  <ngx-loading [show]="loading"></ngx-loading>
+</div>

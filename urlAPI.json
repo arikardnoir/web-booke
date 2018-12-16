@@ -1,0 +1,432 @@
+{
+  "Login": {
+    "Descricao": "Without use Token, make Login",
+    "url": "http://localhost/repositorio-de-trabalhos/API/public/api/account/auth",
+    "Method": "POST",
+    "Return": {
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL3JlcG9zaXRvcmlvLWRlLXRyYWJhbGhvc1wvQVBJXC9wdWJsaWNcL2FwaVwvYXV0aCIsImlhdCI6MTUzMTI1Mjg0OSwiZXhwIjoxNTMxMjU2NDQ5LCJuYmYiOjE1MzEyNTI4NDksImp0aSI6Ik9aMVFSM2JVVTlpZnoxTzMiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.RKAQ7DVfacHarQzVtTZWtWTa8t66XKn2huq-xQwpfLk",
+      "user": {
+        "id": 1,
+        "name_university": "Universidade do Extremo Sul Catarinense",
+        "initials": "UNESC",
+        "fundation_date": "2018-04-11",
+        "university_code": "000221",
+        "city": "Criciuma",
+        "province": "Santa Catarina",
+        "image": "profile.jpg",
+        "email": "aristo.lopes@gmail.com",
+        "created_at": "2018-07-07 21:33:06",
+        "updated_at": "2018-07-10 17:00:49",
+        "roles": [
+          {
+            "id": 1,
+            "name": "admin",
+            "label": "Administrador",
+            "created_at": "2018-07-07 14:00:30",
+            "updated_at": "2018-07-07 07:21:00",
+            "pivot": {
+              "user_id": 1,
+              "role_id": 1
+            },
+            "permissions": [
+              {
+                "id": 1,
+                "name": "view_post",
+                "label": "Visualiza o Post",
+                "created_at": "2018-07-07 09:22:00",
+                "updated_at": "2018-07-07 09:00:12",
+                "pivot": {
+                  "role_id": 1,
+                  "permission_id": 1
+                }
+              },
+              {
+                "id": 2,
+                "name": "edit_post",
+                "label": "Edita o Post",
+                "created_at": "2018-07-07 08:00:20",
+                "updated_at": "2018-07-07 08:00:27",
+                "pivot": {
+                  "role_id": 1,
+                  "permission_id": 2
+                }
+              },
+              {
+                "id": 3,
+                "name": "delete_post",
+                "label": "Deleta o Post",
+                "created_at": "2018-07-07 08:24:00",
+                "updated_at": "2018-07-07 08:26:00",
+                "pivot": {
+                  "role_id": 1,
+                  "permission_id": 3
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "error": "invalid_credentials",
+    "message": "Dados invalidos, verificar os dados!",
+    "error": "could_not_create_token",
+    "variables": {
+      "email": "",
+      "password": ""
+    }
+  },
+  "Forget Password": {
+    "Descricao": "Without use Token, Send Email for Request of Reset Password",
+    "url": "http://localhost/repositorio-de-trabalhos/API/public/api/account/forgetpass",
+    "Method": "POST",
+    "Return": {
+      "status": "True or False"
+    },
+    "error": "token_invalid",
+    "message": "Usuario Nao Encontrado",
+    "status": "could_not_create_token",
+    "variables": {
+      "email": ""
+    }
+  },
+  "resetPassword": {
+    "Descricao": "Use Token for making Request of Reset Password",
+    "url": "localhost/repositorio-de-trabalhos/API/public/api/account/resetpass",
+    "error": "error_signup",
+    "Method": "POST",
+    "Return": {
+      "status": "True or False"
+    },
+    "variables": {
+      "email": "",
+      "password": "",
+      "password_confirmation": ""
+    }
+  },
+  "Signup": {
+    "Descricao": "Without Token, Signup User",
+    "url": "http://localhost:8888/repositorio-de-trabalhos/API/public/api/v2/account/user",
+    "error": "Fail_Upload",
+    "error": "error_signup",
+    "Method": "POST",
+    "Return": {
+      "data": {
+        "name_university": "Universidade Privada de Angola",
+        "initials": "UPRA",
+        "fundation_date": "2010-04-01",
+        "university_code": "111231",
+        "city": "Benguela",
+        "province": "Bengs",
+        "email": "upra@gmail.com",
+        "image": "u-p-r-a.jpeg",
+        "updated_at": "2018-07-09 23:06:32",
+        "created_at": "2018-07-09 23:06:32",
+        "id": "value"
+      },
+      "status": true
+    }
+  },
+  "Get All": {
+    "Descricao": "Without Token, get all works",
+    "url": "http://localhost/repositorio-de-trabalhos/API/public/api/v2/work",
+    "Method": "GET",
+    "Return": {
+      "data": {
+        "id": 1,
+        "title": "Reconhecimento de Voz",
+        "subtitle": "Sistema via Web",
+        "author": "Aristoteles Lopes",
+        "author2": null,
+        "author3": null,
+        "publication_city": "Criciuma",
+        "publication_year": "2018",
+        "volume": "2",
+        "type": "tcc",
+        "page_number": 70,
+        "name_university": "Universidade do Extremo Sul Catarinense",
+        "course": "Ciencia da Computacao",
+        "campus": "Tecnologia",
+        "file": "tcc2.pdf",
+        "keywords": "reconhecimento voz web",
+        "university_id": 1,
+        "created_at": "2018-07-07 21:41:20",
+        "updated_at": "2018-07-07 21:41:20"
+      }
+    }
+  },
+  "Create Work": {
+    "Descricao": "Using token for Post a new Work",
+    "url": "http://localhost/repositorio-de-trabalhos/API/public/api/v2/work",
+    "Method": "POST",
+    "Return": {
+      "data": {
+        "id": 1,
+        "title": "Reconhecimento de Voz",
+        "subtitle": "Sistema via Web",
+        "author": "Aristoteles Lopes",
+        "author2": null,
+        "author3": null,
+        "publication_city": "Criciuma",
+        "publication_year": "2018",
+        "volume": "2",
+        "type": "tcc",
+        "page_number": 70,
+        "name_university": "Universidade do Extremo Sul Catarinense",
+        "course": "Ciencia da Computacao",
+        "campus": "Tecnologia",
+        "file": "tcc2.pdf",
+        "keywords": "reconhecimento voz web",
+        "university_id": 1,
+        "created_at": "2018-07-07 21:41:20",
+        "updated_at": "2018-07-07 21:41:20"
+      },
+      "message": "Trabalho Cadastrado Com Sucesso",
+      "status": true
+    }
+  },
+  "Show Work": {
+    "Descricao": "Using Token for get especific work with ID",
+    "url": "http://localhost/repositorio-de-trabalhos/API/public/api/v2/work/{id}",
+    "Method": "GET",
+    "error": "Not Found",
+    "Return": {
+      "data": {
+        "id": 1,
+        "title": "Reconhecimento de Voz",
+        "subtitle": "Sistema via Web",
+        "author": "Aristoteles Lopes",
+        "author2": null,
+        "author3": null,
+        "publication_city": "Criciuma",
+        "publication_year": "2018",
+        "volume": "2",
+        "type": "tcc",
+        "page_number": 70,
+        "name_university": "Universidade do Extremo Sul Catarinense",
+        "course": "Ciencia da Computacao",
+        "campus": "Tecnologia",
+        "file": "tcc2.pdf",
+        "keywords": "reconhecimento voz web",
+        "university_id": 1,
+        "created_at": "2018-07-07 21:41:20",
+        "updated_at": "2018-07-07 21:41:20"
+      },
+      "status": true
+    }
+  },
+  "Update Work": {
+    "Descricao": "Update an Work Posted by User Logged, with Token",
+    "url": "http://localhost/repositorio-de-trabalhos/API/public/api/v2/work/{id}",
+    "Method": "PUT",
+    "error": "Not Found",
+    "error": "Fail_Upload",
+    "Return": {
+      "data": {
+        "id": 1,
+        "title": "Reconhecimento de Voz",
+        "subtitle": "Sistema via Web",
+        "author": "Aristoteles Lopes",
+        "author2": null,
+        "author3": null,
+        "publication_city": "Criciuma",
+        "publication_year": "2018",
+        "volume": "2",
+        "type": "tcc",
+        "page_number": 70,
+        "name_university": "Universidade do Extremo Sul Catarinense",
+        "course": "Ciencia da Computacao",
+        "campus": "Tecnologia",
+        "file": "tcc2.pdf",
+        "keywords": "reconhecimento voz web",
+        "university_id": 1,
+        "created_at": "2018-07-07 21:41:20",
+        "updated_at": "2018-07-07 21:41:20"
+      },
+      "status": true
+    }
+  },
+  "Delete Work": {
+    "Descricao": "Using Token, delete work with ID",
+    "url": "http://localhost/repositorio-de-trabalhos/API/public/api/v2/work/{id}",
+    "Method": "DELETE",
+    "error": "Not Found",
+    "Return": {
+      "status": true
+    }
+  },
+  "Search All": {
+    "Descricao": "Without Token, doing Search of All Works Posted",
+    "url": "http://localhost/repositorio-de-trabalhos/API/public/api/v2/workout/search",
+    "Method": "GET",
+    "validate.error": "Not Found",
+    "variable": "",
+    "Return": {
+      "data": {
+        "id": 1,
+        "title": "Reconhecimento de Voz",
+        "subtitle": "Sistema via Web",
+        "author": "Aristoteles Lopes",
+        "author2": null,
+        "author3": null,
+        "publication_city": "Criciuma",
+        "publication_year": "2018",
+        "volume": "2",
+        "type": "tcc",
+        "page_number": 70,
+        "name_university": "Universidade do Extremo Sul Catarinense",
+        "course": "Ciencia da Computacao",
+        "campus": "Tecnologia",
+        "file": "tcc2.pdf",
+        "keywords": "reconhecimento voz web",
+        "university_id": 1,
+        "created_at": "2018-07-07 21:41:20",
+        "updated_at": "2018-07-07 21:41:20"
+      },
+      "status": true
+    }
+  },
+  "Search Name": {
+    "Descricao": "Without Token do an Search with Name of University",
+    "url": "http://localhost/repositorio-de-trabalhos/API/public/api/v2/workout/search/name",
+    "Method": "GET",
+    "validate.error": "Not Found",
+    "variable": "",
+    "Return": {
+      "data": {
+        "id": 1,
+        "title": "Reconhecimento de Voz",
+        "subtitle": "Sistema via Web",
+        "author": "Aristoteles Lopes",
+        "author2": null,
+        "author3": null,
+        "publication_city": "Criciuma",
+        "publication_year": "2018",
+        "volume": "2",
+        "type": "tcc",
+        "page_number": 70,
+        "name_university": "Universidade do Extremo Sul Catarinense",
+        "course": "Ciencia da Computacao",
+        "campus": "Tecnologia",
+        "file": "tcc2.pdf",
+        "keywords": "reconhecimento voz web",
+        "university_id": 1,
+        "created_at": "2018-07-07 21:41:20",
+        "updated_at": "2018-07-07 21:41:20"
+      },
+      "status": true
+    }
+  },
+  "Search Description": {
+    "Descricao": "Without Token do an Search with Description of Work",
+    "url": "http://localhost/repositorio-de-trabalhos/API/public/api/v2/workout/search/description",
+    "Method": "GET",
+    "validate.error": "Not Found",
+    "variable": "",
+    "Return": {
+      "data": {
+        "id": 1,
+        "title": "Reconhecimento de Voz",
+        "subtitle": "Sistema via Web",
+        "author": "Aristoteles Lopes",
+        "author2": null,
+        "author3": null,
+        "publication_city": "Criciuma",
+        "publication_year": "2018",
+        "volume": "2",
+        "type": "tcc",
+        "page_number": 70,
+        "name_university": "Universidade do Extremo Sul Catarinense",
+        "course": "Ciencia da Computacao",
+        "campus": "Tecnologia",
+        "file": "tcc2.pdf",
+        "keywords": "reconhecimento voz web",
+        "university_id": 1,
+        "created_at": "2018-07-07 21:41:20",
+        "updated_at": "2018-07-07 21:41:20"
+      },
+      "status": true
+    },
+    "Works": {
+      "Descricao": "Get All Works Without Token",
+      "url": "http://localhost/repositorio-de-trabalhos/API/public/api/v2/workout",
+      "Method": "GET",
+      "validate.error": "Not Found",
+      "variable": "",
+      "Return": {
+        "data": {
+          "id": 1,
+          "title": "Reconhecimento de Voz",
+          "subtitle": "Sistema via Web",
+          "author": "Aristoteles Lopes",
+          "author2": null,
+          "author3": null,
+          "publication_city": "Criciuma",
+          "publication_year": "2018",
+          "volume": "2",
+          "type": "tcc",
+          "page_number": 70,
+          "name_university": "Universidade do Extremo Sul Catarinense",
+          "course": "Ciencia da Computacao",
+          "campus": "Tecnologia",
+          "file": "tcc2.pdf",
+          "keywords": "reconhecimento voz web",
+          "university_id": 1,
+          "created_at": "2018-07-07 21:41:20",
+          "updated_at": "2018-07-07 21:41:20"
+        },
+        "status": true
+      }
+    },
+    "Especific Works": {
+      "Descricao": "Get an Especific Work with ID, Without Token",
+      "url": "http://localhost/repositorio-de-trabalhos/API/public/api/v2/workout/{id}",
+      "Method": "GET",
+      "validate.error": "Not Found",
+      "variable": "",
+      "Return": {
+        "data": {
+          "id": 1,
+          "title": "Reconhecimento de Voz",
+          "subtitle": "Sistema via Web",
+          "author": "Aristoteles Lopes",
+          "author2": null,
+          "author3": null,
+          "publication_city": "Criciuma",
+          "publication_year": "2018",
+          "volume": "2",
+          "type": "tcc",
+          "page_number": 70,
+          "name_university": "Universidade do Extremo Sul Catarinense",
+          "course": "Ciencia da Computacao",
+          "campus": "Tecnologia",
+          "file": "tcc2.pdf",
+          "keywords": "reconhecimento voz web",
+          "university_id": 1,
+          "created_at": "2018-07-07 21:41:20",
+          "updated_at": "2018-07-07 21:41:20"
+        },
+        "status": true
+      }
+    },
+    "Profile Image": {
+      "Descricao": "Get an Profile Image by filename",
+      "url": "http://localhost/repositorio-de-trabalhos/API/public/api/v2/image/{filename}",
+      "Method": "GET",
+      "validate.error": "Not Found",
+      "variable": "",
+      "Return": {
+        "file": "file"
+      }
+    },
+    "Work File": {
+      "Descricao": "Get an File by filename",
+      "url": "http://localhost/repositorio-de-trabalhos/API/public/api/v2/workout/file/{filename}",
+      "Method": "GET",
+      "validate.error": "Not Found",
+      "variable": "",
+      "Return": {
+        "file": "file"
+      }
+    }
+  }
+}
