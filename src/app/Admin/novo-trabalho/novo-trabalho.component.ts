@@ -14,6 +14,7 @@ export class NovoTrabalhoComponent implements OnInit {
 
   tipoTrabalho = ['artigos', 'tcc', 'teses', 'dissertacoes', 'livros'];
   id = this.loginService.getUser().id;
+  name = this.loginService.getUser().nome;
   formTrabalho: FormGroup;
   selectedFile: File;
 
@@ -35,7 +36,7 @@ export class NovoTrabalhoComponent implements OnInit {
       volume: this.fb.control(''),
       type: this.fb.control('', [Validators.required]),
       page_number: this.fb.control('', [Validators.required]),
-      name_university: this.fb.control('', [Validators.required]),
+      name_university: this.fb.control(''),
       course: this.fb.control('', [Validators.required]),
       campus: this.fb.control(''),
       file: this.fb.control('', [Validators.required]),
@@ -64,7 +65,7 @@ export class NovoTrabalhoComponent implements OnInit {
       fd.append('volume', dados.volume);
       fd.append('type', dados.type);
       fd.append('page_number', dados.page_number);
-      fd.append('name_university', dados.name_university);
+      fd.append('name_university', this.name);
       fd.append('course', dados.course);
       fd.append('campus', dados.campus);
       fd.append('file', this.selectedFile, this.selectedFile.name);
