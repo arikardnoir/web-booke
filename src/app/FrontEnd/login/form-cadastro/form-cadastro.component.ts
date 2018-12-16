@@ -32,7 +32,7 @@ export class FormCadastroComponent implements OnInit {
       password: this.formBuilder.control('', [Validators.required, Validators.minLength(6)]),
       password_confirmation: this.formBuilder.control('', [Validators.required, Validators.minLength(6)])
     });
-    this.preencherForm();
+    // this.preencherForm();
     // this.imgAvatar = this.formCadastro.get('image');
     // console.log(this.imgAvatar);
     // const formData = new FormData();
