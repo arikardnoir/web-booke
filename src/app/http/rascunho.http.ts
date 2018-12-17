@@ -8,7 +8,7 @@ export class RascunhoHttp {
     constructor(public api: ApiHttp) {}
 
     get(id) {
-        return this.api.get(`v2/work/showall/${id}`);
+        return this.api.get(`v2/workout/myWorks/${id}`);
     }
 
     // getMe() {
