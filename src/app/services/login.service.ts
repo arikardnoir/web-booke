@@ -20,7 +20,7 @@ export class LoginService {
   status;
   loading = true;
 
-  private urlLogin = 'http://localhost/api-booke/public/api/account/auth';
+  //private urlLogin = 'http://localhost:85/api-booke/public/api/account/auth';
 
   constructor(private http: LoginHttp, private router: Router,
     private notificationService: NotificationService) { }
