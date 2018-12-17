@@ -1,4 +1,3 @@
-import { CadastroService } from './cadastro-service';
 import { DataCadastro } from '@FrontEnd/login/data-cadastro.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -17,8 +16,7 @@ export class FormCadastroComponent implements OnInit {
   imgAvatar;
   constructor(private formBuilder: FormBuilder,
     private _userService: UserService,
-    private notificationService: NotificationService,
-    private cadastroService:CadastroService) { }
+    private notificationService: NotificationService) { }
 
   ngOnInit() {
     this.formCadastro = this.formBuilder.group({
