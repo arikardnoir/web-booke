@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { NotificationService } from '../shared/messages/notification.service';
-import { ResultsService } from '../services/results.service';
+import { ResultsService } from '@resources/results/results.service';
 import { Modal } from './modal.model';
 
 import { ModalNotificationService } from '../shared/messages/modal.service';
-import { ForgetDownloadService } from '../services/forget_download.service';
+import { DownloadService } from '@resources/download/download.service';
 
 @Component({
   selector: 'rt-modal',
@@ -21,7 +20,7 @@ export class ModalComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private mService: ModalNotificationService,
               private resultsService: ResultsService,
-              private forgetdownload: ForgetDownloadService) {}
+              private download: DownloadService) {}
 
   nameFile;
 
@@ -37,19 +36,10 @@ export class ModalComponent implements OnInit {
     });
 
     this.nameFile = this.resultsService.getWork().file;
-  }
-
-  forget_pass(email) {
-
-    this.forgetdownload.forget_pass(email)
-    .subscribe(
-      status => console.log(status)
-    );
-
-  }
+  } 
 
   downloadFile() {
-    this.forgetdownload.downloadFile(this.nameFile).subscribe(
+    this.download.downloadFile(this.nameFile).subscribe(
       datas => datas,
       response => console.log(response.message)
     );

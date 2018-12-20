@@ -17,9 +17,9 @@
       "dom"
     ],
     "paths": {
-      "@FrontEnd/*": ["src/app/FrontEnd/*"],
-      // "@services/*": ["src/shared-angular/*"],
-      // "@theme/*": ["src/pages/theme/*"],
+      "@pages/*": ["src/app/pages/*"],
+      "@resources/*": ["src/app/resources/*"],
+      "@shared/*": ["src/app/shared/*"],
       "@environments/*": ["src/environments/*"]
     },
   }
