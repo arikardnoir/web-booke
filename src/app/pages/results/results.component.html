@@ -30,7 +30,11 @@
 
     <div class="" *ngFor="let work of works" style="border-bottom: 0.45px solid #bdb9b9;">
       <div class="content_trabalho">
-        <h3 class="title-trabalho">{{ work.title }}</h3>
+        
+          <h3 class="title-trabalho">
+            <a type="button" data-toggle="modal"
+            data-target="#exampleModal" (click)="showResumo(work.id)">{{ work.title }}</a>
+          </h3>
         <p class="name-author">Autor(a): {{ work.author }}, {{ work.author2 }}, {{ work.author3 }}</p>
         <p class="name-author space-paragrafo">{{ work.course }}</p>
         <p class="stly-geral space-paragrafo">
@@ -53,3 +57,5 @@
 <div class="my-container">
   <ngx-loading [show]="loading"></ngx-loading>
 </div>
+
+<rt-modal></rt-modal>

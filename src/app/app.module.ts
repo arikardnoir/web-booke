@@ -25,6 +25,8 @@ import {FrontEndComponent} from '@pages/front-end/front-end.component';
 import { SearchFormComponent } from '@pages/search/search-form/search-form.component';
 import { ResultsService } from '@resources/results/results.service';
 import { ResultsHttp } from '@resources/results/results.http';
+import { DownloadHttp } from '@resources/download/download.http';
+import { DownloadService } from '@resources/download/download.service';
 
 
 
@@ -60,7 +62,9 @@ import { ResultsHttp } from '@resources/results/results.http';
     SearchHttp,
     SearchService,
     ResultsHttp,
-    ResultsService
+    ResultsService,
+    DownloadHttp,
+    DownloadService
    ],
   bootstrap: [AppComponent]
 })
