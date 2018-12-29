@@ -11,6 +11,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   templateUrl: './front-end.component.html',
   styleUrls: ['./front-end.component.css']
 })
+
+
 export class FrontEndComponent implements OnInit, AfterContentChecked {
 
   
@@ -53,5 +55,12 @@ export class FrontEndComponent implements OnInit, AfterContentChecked {
     }
 
   }
+
+  animationSearch() {
+    document.querySelector('.search').classList.toggle('close');
+    document.querySelector('.input').classList.toggle('square');
+    
+  }
+
 
 }

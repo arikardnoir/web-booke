@@ -32,7 +32,7 @@
       <div class="content_trabalho">
         
           <h3 class="title-trabalho">
-            <a type="button" data-toggle="modal"
+            <a type="button" data-toggle="modal" style="color:#2f2a53"
             data-target="#exampleModal" (click)="showResumo(work.id)">{{ work.title }}</a>
           </h3>
         <p class="name-author">Autor(a): {{ work.author }}, {{ work.author2 }}, {{ work.author3 }}</p>
@@ -49,7 +49,7 @@
 
     <div class="col-xs-12" *ngIf="works.length == 0">
       <p class="text-center msgNotFound"><i class="fa fa-search"></i> Termo da Pesquisa não consta em nossa base de
-        dados !</p>
+        dados!</p>
     </div>
 
   </div>

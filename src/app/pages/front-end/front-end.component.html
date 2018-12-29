@@ -22,20 +22,28 @@
             </div>
         </div>
     </div>
-    <div class="col-xs-10" style="display: flex; justify-content:space-between; align-items: center;">
+    <div class="col-xs-10" style="display: flex;">
         <div class="" *ngIf="!hiddenLogo">
             <!-- <a [routerLink]="['/']" class="logo">
                         <img src="./assets/img/logo_2.png" alt="">
                     </a> -->
             <div class="searchInput">
-                <form [formGroup]="searchTop">
+                <form [formGroup]="searchTop" id="content">
                     <div class="box-search-top">
-                        <input type="text" formControlName="search" (keyup.enter)="_searchTop(searchTop.value)"
-                            [(ngModel)]="valueSearch" class="mr-t">
-                        <i class="fa fa-search mr-t" (click)="_searchTop(searchTop.value)"></i>
+                            
+                        <input type="text" name="input" formControlName="search" class="input" (keyup.enter)="_searchTop(searchTop.value)"
+                         [(ngModel)]="valueSearch">
+                        <i class="fa fa-search search" (click)="animationSearch()"></i>
+                        
+                        <!--<input type="text" formControlName="search" (keyup.enter)="_searchTop(searchTop.value)"
+                            [(ngModel)]="valueSearch" class="mr-t "> 
+                            <i class="fa fa-search mr-t separacao" (click)="_searchTop(searchTop.value)"></i>  -->                                       
                     </div>
+                  
                 </form>
+
             </div>
+           
         </div>
         <i class="fa"></i>
         <div class="" style="display:flex;">
