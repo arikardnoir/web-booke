@@ -116,6 +116,9 @@ input{
     .search-content{
         width: 55%;
     }
+    .content_trabalho {
+        font-size: 1.4em;
+    }
 }
 
 @media (max-width: 991px){ 
