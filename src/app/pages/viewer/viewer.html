@@ -1,0 +1,30 @@
+<header class="header">
+    <div class="col-xs-2 col-sm-3">
+        <div class="col-xs-12" style="padding-left:0;">
+            <div class="h_left">
+                <a [routerLink]="['/']" class="logo">
+                    <img src="./assets/img/logo_2.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-10">
+
+    </div>
+</header>
+<main class="main">
+
+    <!-- <div>
+        <label>PDF src</label>
+        <input type="file" (change)="onFileSeleted($event)" id="file">
+        <input type="text" placeholder="" [(ngModel)]="page">
+    </div> -->
+    <pdf-viewer 
+    [src]="pdfSrc" 
+    [render-text]="true" 
+    style="display: block; width: 100%; height: 100%; background: green;" 
+    [show-all]="true" 
+    [page]="page" 
+    [zoom]="0.5"></pdf-viewer>
+
+</main>

@@ -1,0 +1,159 @@
+.main {
+  padding: 0 80px;
+}
+.sec_01 {
+  height: 595px;
+  background: white;
+  display: flex;
+}
+.sec_01 .sec_right, 
+.sec_02 .sec_left,
+.sec_03 .sec_right,
+.sec_04 .sec_left {
+  background-image: url(../../../assets/img/607.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 20%;
+}
+.sec_01 .sec_left {
+  padding-right: 0;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.title {
+  font-size: 3.4em;
+  margin-bottom: 0px;
+}
+.sub-title {
+  font-size: 1.4em;
+}
+.title, .sub-title, .description {
+  color: #2f2a53;
+}
+.title, 
+.sub-title, 
+.btn-navegar,
+.description {
+  /* margin-left: 100px; */
+}
+.sec_left, .sec_right {
+  flex: 1;
+  height: 100%;
+  /* border: 1px solid black; */
+}
+.btn-navegar {
+  border: 1px solid;
+    width: 200px;
+    padding: 10px;
+    border-radius: 140px;
+    background: #2f2a53;
+    color: white;
+}
+.description {
+  width: 70%;
+}
+
+
+/* section 02*/
+.sec_00 {
+  height: 400px;
+  padding: 50px 0;
+  display: flex;
+}
+.sec_02 {
+ 
+}
+
+/* section 03*/
+.sec_03 {
+  
+}
+
+/* section 04*/
+.sec_04 {
+
+}
+
+.c {
+  height: 500px;
+  background: slateblue;
+}
+
+
+.header {
+  height: 60px;
+   background: white;
+   padding: 10px 72px;
+   /* box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1); */
+   display: flex;
+   align-items: center;
+   position: relative;
+   z-index: 1010;
+ }
+ 
+ .h-box {
+   position: relative;
+   height: 40px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ 
+ .h_box02 {
+   position: relative;
+   height: 40px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+ }
+ 
+ .h_box-item {
+   height: 40px;
+   display: flex;
+   align-items: center;
+ }
+ 
+ .h_right i,
+ .b_btn-nav {
+   margin-right: 15px;
+ }
+ 
+ .menu_hanburger {
+   width: 25px;
+   height: 23px;
+   position: relative;
+   display: inline-block;
+   border-top: 2px solid orangered;
+   margin-right: 20px;
+ }
+ 
+ .menu_hanburger::before,
+ .menu_hanburger::after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   border: 1px solid orangered;
+ }
+ 
+ .menu_hanburger::before {
+   top: 8px;
+ }
+ 
+ .menu_hanburger::after {
+   top: 17px;
+ }
+ 
+ .user-avatar {
+   width: 40px;
+   height: 40px;
+   position: relative;
+   border: 1px solid #686F5F;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }

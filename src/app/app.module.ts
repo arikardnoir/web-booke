@@ -27,6 +27,10 @@ import { ResultsService } from '@resources/results/results.service';
 import { ResultsHttp } from '@resources/results/results.http';
 import { DownloadHttp } from '@resources/download/download.http';
 import { DownloadService } from '@resources/download/download.service';
+import { AboutComponent } from '@pages/about/about';
+
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { viewerComponent } from '@pages/viewer/viewer';
 
 
 
@@ -37,14 +41,17 @@ import { DownloadService } from '@resources/download/download.service';
     ResultsComponent,
     SearchComponent,
     NotFoundComponent,
+    AboutComponent,
     SearchFormComponent,
-    ModalComponent
+    ModalComponent,
+    viewerComponent,
     ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
+    PdfViewerModule,
     LoadingModule.forRoot({
       animationType: ANIMATION_TYPES.threeBounce,
       backdropBackgroundColour: 'rgba(0,0,0,0.1)',

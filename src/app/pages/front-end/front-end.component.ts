@@ -15,7 +15,6 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 
 export class FrontEndComponent implements OnInit, AfterContentChecked {
 
-  
   searchTop: FormGroup;
   hiddenLogo = false;
   valueSearch;
@@ -43,7 +42,6 @@ export class FrontEndComponent implements OnInit, AfterContentChecked {
     const value = keysearch.search;
     console.log(value);
     this.router.navigate(['/resultados', keysearch.search]);
-    //this.notificationService.notify(value.toString(), 'Ok');
   }
 
   ngAfterContentChecked() {
@@ -51,14 +49,20 @@ export class FrontEndComponent implements OnInit, AfterContentChecked {
     if (this.router.routerState.snapshot.url.includes('search')){
       this.hiddenLogo = true;
     } else {
-      this.hiddenLogo = false;
+      this.hiddenLogo = false;  
     }
 
   }
 
   animationSearch() {
-    document.querySelector('.search').classList.toggle('close');
-    document.querySelector('.input').classList.toggle('square');
+    document.querySelector('.span-search').classList.toggle('inclicked');
+    console.log(document.querySelector('.span-search'));
+    document.querySelector('.s').classList.toggle('close');
+    
+    setTimeout(() => {
+      document.querySelector('.s').classList.toggle('s-border');
+    }, 1000)
+    
     
   }
 

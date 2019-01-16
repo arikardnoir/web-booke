@@ -391,7 +391,9 @@
 
   /* main footer */
   .main-footer{
-    display: block;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -407,13 +409,12 @@ CSS pesquisa
 */
 
 #content {
-  position: absolute;
-  height: 50px;
-  width: 300px;
-  margin-left: 170px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  /* height: 50px; */
+  width: 100%;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
 }
 
 #content.on {
@@ -428,6 +429,8 @@ CSS pesquisa
 }
 
 input {
+  position: absolute;
+    right: 0;
   box-sizing: border-box;
   width: 25px;
   height: 25px;
@@ -443,16 +446,16 @@ input {
   transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
   -webkit-transition-delay: 0.4s;
   transition-delay: 0.4s;
-  -webkit-transform: translate(-100%, -50%);
+  /* -webkit-transform: translate(-100%, -50%);
   -ms-transform: translate(-100%, -50%);
-  transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%); */
 }
 
 .search {
   background: none;
   position: absolute;
-  top: 0px;
-  left: 0;
+  left: 99%;
+  top: 19px;
   height: 50px;
   width: 50px;
   padding: 0;
@@ -540,4 +543,141 @@ input {
   -ms-transform: translate(-100%, -50%);
   transform: translate(-100%, -50%);
 }
+
+
+
+
+/*  --------  */
+.box-search-top input{
+  border-top: 0px solid transparent;
+  border-left: 0px solid transparent;
+  border-right: 0px solid transparent;
+}
+.box-search-top input[type=text] {
+  color: black;
+}
+.s-border {
+  border: 1px solid #2f2a53;
+}
+.s {
+  top: 50%;
+  transform: translateY(-50%);
+  height: 35px;
+  width: 35px;
+  
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  /* top: 0px; */
+  cursor: pointer;
+  z-index: 100;
+  background: white;
+}
+.span-search {
+  position: absolute;
+  top: 26%;
+  transform: translateY(-50%);
+  box-sizing: border-box;
+  width: 35px;
+  height: 35px;
+  border-bottom: 1px solid #2f2a53;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Roboto;
+  outline: 0;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
+  transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+  /* -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%); */
+}
+
+.s::after {
+  content: '';
+    position: absolute;
+    height: 14px;
+    width: 4px;
+    background: #2f2a53;
+    right: -8px;
+    top: 27px;
+    outline: none;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    border-radius: 14%;
+}
+
+.inclicked {
+  /* width: 100%;
+  height: 35px;
+  border-radius: 0;
+  right: 0;
+  transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
+  transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
+  -webkit-transition-delay: 0.4s, 0s, 0.4s;
+  transition-delay: 0.4s, 0s, 0.4s; */
+  box-sizing: border-box;
+  padding: 0 40px 0 10px;
+  width: 100%;
+  height: 35px;
+  border-radius: 0;
+  background: none;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  outline: 0;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
+  transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out, padding 0.2s;
+  -webkit-transition-delay: 0.4s, 0s, 0.4s;
+  transition-delay: 0.4s, 0s, 0.4s;
+}
+
+.close {
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+  border: 1px solid transparent !important;
+}
+
+.close:before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 4px;
+  top: 50%;
+  left: 50%;
+  background-color: #2f2a53;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.close:after {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 4px;
+  background-color: #2f2a53;
+  top: 50%;
+    left: 50%;
+  cursor: pointer;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.list_link {
+  list-style: none;
+  font-size: 1.2em;
+}
+
+
+
 

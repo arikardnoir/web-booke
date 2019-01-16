@@ -39,10 +39,15 @@ export class ModalComponent implements OnInit {
   } 
 
   downloadFile() {
+    console.log(this.nameFile)
     this.download.downloadFile(this.nameFile).subscribe(
-      datas => datas,
-      response => console.log(response.message)
+      datas => console.log(datas),
+      response => console.log(response)
     );
+  }
+
+  pdfWrite() {
+    window.open('http://localhost:4200/visualizar', '_blank');
   }
 
 }

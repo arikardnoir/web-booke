@@ -202,7 +202,7 @@ input{
     min-height: 124px;
     margin-bottom: 20px;
     border-radius: 3px;
-    padding: 3px 10px 0 0px;
+    padding: 10px 10px 10px 10px;
 }
 /* .content_trabalho:hover{
     background-color: aliceblue;

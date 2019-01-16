@@ -6,7 +6,8 @@ export class DownloadHttp {
 
     constructor(public api: ApiHttp) {}
 
-    download(data) {
-        return this.api.post('v2/workout/file/', data);
+    download(fileName) {
+        console.log(fileName)
+        return this.api.get(`work/file/${fileName}`);
     }
 }

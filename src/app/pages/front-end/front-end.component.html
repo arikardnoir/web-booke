@@ -22,36 +22,54 @@
             </div>
         </div>
     </div>
-    <div class="col-xs-10" style="display: flex;">
+    <div class="col-xs-10">
         <div class="" *ngIf="!hiddenLogo">
             <!-- <a [routerLink]="['/']" class="logo">
                         <img src="./assets/img/logo_2.png" alt="">
                     </a> -->
-            <div class="searchInput">
+            <div class="searchInput" style="display: flex;height: 40px;
+            position: relative;">
                 <form [formGroup]="searchTop" id="content">
                     <div class="box-search-top">
+                        <span class="s s-border" (click)="animationSearch()"></span>
+                        <input class="span-search" type="text" formControlName="search" (keyup.enter)="_searchTop(searchTop.value)"
+                        [(ngModel)]="valueSearch" (click)="_searchTop(searchTop.value)">
                             
-                        <input type="text" name="input" formControlName="search" class="input" (keyup.enter)="_searchTop(searchTop.value)"
+                        <!-- <input type="text" name="input" formControlName="search" class="input" (keyup.enter)="_searchTop(searchTop.value)"
                          [(ngModel)]="valueSearch">
                         <i class="fa fa-search search" (click)="animationSearch()"></i>
-                        
-                        <!--<input type="text" formControlName="search" (keyup.enter)="_searchTop(searchTop.value)"
-                            [(ngModel)]="valueSearch" class="mr-t "> 
-                            <i class="fa fa-search mr-t separacao" (click)="_searchTop(searchTop.value)"></i>  -->                                       
+                        -->
+                        <!-- <input type="text" formControlName="search" (keyup.enter)="_searchTop(searchTop.value)"
+                            [(ngModel)]="valueSearch" class="span-search"> 
+                            <i class="fa fa-search mr-t separacao" (click)="_searchTop(searchTop.value)"></i>                                          -->
                     </div>
+
+                    <!-- <div id="app-cover">
+                        <div id="app">
+                          <div id="circle">
+                            <form method="get" action="" id="form">
+                              <input type="text" name="q" id="search-input" placeholder="Search" autocomplete="off" required>
+                            </form>
+                            <div id="r-btn"></div>
+                          </div>
+                          <div id="c-btn"></div>
+                          <div id="init-button"></div>
+                          <input type="submit" id="submit-button" form="form">
+                        </div>
+                      </div> -->
                   
                 </form>
 
             </div>
            
         </div>
-        <i class="fa"></i>
+        <!-- <i class="fa fa-filter fa-2x" (click)=""></i> -->
+        <!-- <i class="fa"></i>
         <div class="" style="display:flex;">
 
-            <i class="fa fa-filter fa-2x" *ngIf="!hiddenLogo"></i>
             <i class="fa fa-search fa-2x" *ngIf="!hiddenLogo"></i>
             
-        </div>
+        </div> -->
     </div>
 </header>
 
@@ -60,5 +78,10 @@
 <footer class="main-footer">
     <!-- To the right -->
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2018 <a href="#" style="color:#fff;">&nbsp;TecGenius</a>.&nbsp;</strong> All rights reserved.
+    <div>
+        <strong>Copyright &copy; 2018 <a href="#" style="color:#fff;">&nbsp;TecGenius</a>.&nbsp;</strong> All rights reserved.
+    </div>
+    <div>
+        <a [routerLink]="['/sobre']" style="font-size: 1.3em;color: white;">O Booke</a>
+    </div>
 </footer>

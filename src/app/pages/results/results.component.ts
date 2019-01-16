@@ -17,13 +17,14 @@ export class ResultsComponent implements OnInit {
   public valueSearchMobile: any = '';
   filtroSearch: FormGroup;
 
-  constructor(public searchService: SearchService, private resultsService: ResultsService , private route: ActivatedRoute,
+  constructor(public searchService: SearchService, private resultsService: ResultsService, private route: ActivatedRoute,
     private fb: FormBuilder,
     private mService: ModalNotificationService, private notificationService: NotificationService) { }
 
   works = [];
 
   ngOnInit() {
+
     this.filtroSearch = this.fb.group({
       key_university: this.fb.control(''),
       key_search: this.fb.control('')
@@ -31,26 +32,22 @@ export class ResultsComponent implements OnInit {
 
     this.route.params.subscribe(
       params => {
-        const paramSearch = params['search'];
+        let paramSearch = params['search'];
         this.getWorks(paramSearch);
       }
     );
 
-    if (this.notificationService.notifier) {
-      this.notificationService.notifier.subscribe( message => {
-        this.getWorks(message);
-      });
-    }
   }
 
   getWorks(paramSearch) {
     this.loading = true;
+
     if (paramSearch) {
       this.searchService.searchAll(paramSearch).subscribe(data => {
         this.loading = false;
         this.iterarDados(data)
       })
-      
+
     } else {
       //alert('Preencha corretamente o campo');
       this.loading = false;
@@ -58,6 +55,7 @@ export class ResultsComponent implements OnInit {
   }
 
   getFilter(dados) {
+
     this.loading = true;
     if (!(dados.key_university.length === 0)) {
       this.resultsService.showWorkUni(dados.key_university).subscribe(
@@ -78,13 +76,11 @@ export class ResultsComponent implements OnInit {
   }
 
   iterarDados(datas) {
-    //this.loading = false;
-
     if (this.works.length !== 0) {
       this.works = [];
     }
 
-    for ( let i = 0; i < datas.data.length; i++) {
+    for (let i = 0; i < datas.data.length; i++) {
       this.works.push(datas.data[i]);
       datas.data[i].keywords = datas.data[i].keywords.split(';');
     }
@@ -93,11 +89,12 @@ export class ResultsComponent implements OnInit {
   }
 
   showResumo(resume) {
+    
     for (let i = 0; i < this.works.length; i++) {
       if (this.works[i].id === resume) {
         const work = this.works[i];
 
-        this.mService.notify({work:work, value: true});
+        this.mService.notify({ work: work, value: true });
         this.resultsService.setWork(work.id, work.title, work.file);
 
       }
@@ -105,7 +102,7 @@ export class ResultsComponent implements OnInit {
 
   }
 
-  search_mobile(){
+  search_mobile() {
     this.getWorks(this.valueSearchMobile);
   }
 

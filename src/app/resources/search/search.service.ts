@@ -14,11 +14,11 @@ searchAll(keysearch: String) {
   return this.searchHttp.getAll(keysearch)
 }
 
-  searchName(data: DataSearch) {
-    this.searchHttp.getName(data.keysearch).subscribe(data => console.log(data));
-  }
+  // searchName(data: DataSearch) {
+  //   this.searchHttp.getName(data.keysearch).subscribe(data => console.log(data));
+  // }
 
-  searchDescription(data: DataSearch) {
-    this.searchHttp.getDescription(data.keysearch).subscribe(data => console.log(data));
-  }
+  // searchDescription(data: DataSearch) {
+  //   this.searchHttp.getDescription(data.keysearch).subscribe(data => console.log(data));
+  //}
 }

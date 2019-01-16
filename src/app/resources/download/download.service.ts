@@ -6,6 +6,7 @@ export class DownloadService {
     constructor(private downloadHttp: DownloadHttp) {}
 
   downloadFile(fileName) {
+    console.log(fileName)
     return this.downloadHttp.download(fileName);
   }
 

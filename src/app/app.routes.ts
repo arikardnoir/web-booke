@@ -6,6 +6,8 @@ import { ResultsComponent } from '@pages/results/results.component';
 // guards
 
 import { NotFoundComponent } from '@pages/not-found/not-found.component';
+import { AboutComponent } from '@pages/about/about';
+import { viewerComponent } from '@pages/viewer/viewer';
 
 export const ROUTES: Routes = [
     {path: '', component: FrontEndComponent,
@@ -15,6 +17,7 @@ export const ROUTES: Routes = [
             {path: 'resultados/:search', component: ResultsComponent},
         ]
     },
-    
+    {path: 'sobre', component: AboutComponent},
+    {path: 'visualizar', component: viewerComponent},
     {path: '**', component: NotFoundComponent}
 ];
