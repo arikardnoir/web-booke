@@ -1,6 +1,6 @@
 import { SearchService } from '@resources/search/search.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 import { ResultsService } from '@resources/results/results.service';
 import { NotificationService } from '../../shared/messages/notification.service';
@@ -20,8 +20,12 @@ export class ResultsComponent implements OnInit {
 
   public university_search = ''
   public keyword_search = ''
+  public p;
 
-  constructor(public searchService: SearchService, private resultsService: ResultsService, private route: ActivatedRoute,
+  constructor(public searchService: SearchService, 
+    private resultsService: ResultsService, 
+    private route: ActivatedRoute,
+    private router: Router,
     private fb: FormBuilder,
     private mService: ModalNotificationService, private notificationService: NotificationService) { }
 
@@ -29,10 +33,10 @@ export class ResultsComponent implements OnInit {
   verifyWorks: boolean = false;
 
   ngOnInit() {
-
+    
     this.filtroSearch = this.fb.group({
-      key_university: this.fb.control(''),
-      key_search: this.fb.control('')
+      university_search: this.fb.control(''),
+      keyword_search: this.fb.control('')
     });
 
     this.searchTop = this.fb.group({
@@ -54,6 +58,7 @@ export class ResultsComponent implements OnInit {
 
   getWorks(paramSearch) {
     this.loading = true;
+    this.router.navigate(['/resultados', paramSearch]);
 
     if (paramSearch) {
       this.searchService.searchAll(paramSearch).subscribe(data => {
@@ -71,25 +76,41 @@ export class ResultsComponent implements OnInit {
   }
 
   getFilter(dados) {
-
     this.loading = true;
-    if (!(dados.key_university.length === 0)) {
-      this.resultsService.getWorkFilter(this.university_search, this.keyword_search).subscribe(
-        datas => this.iterarDados(datas),
+
+    if (dados.university_search != '' || dados.keyword_search != '') {
+
+      if (dados.university_search != '' && dados.keyword_search != '') {
+        this.router.navigate(['/resultados', `${dados.university_search}&${dados.keyword_search}`]);
+      } else {
+        
+        if (dados.university_search != '') {
+          this.router.navigate(['/resultados', dados.university_search]);
+        } else {
+          this.router.navigate(['/resultados', dados.keyword_search]);
+        }
+        
+      }
+      
+      
+      this.resultsService.getWorkFilter(dados.university_search, dados.keyword_search).subscribe(
+        data => {
+          this.loading = false;
+          if(data['data'].length == 0) {
+            this.verifyWorks = true;
+          } else {
+            this.verifyWorks = false;
+          }
+          this.iterarDados(data)
+        },
         response => console.log(response.message)
       );
+      
+
+    } else {
       this.loading = false;
+      //console.log('Erro Total..');
     }
-    // } else if (!(dados.key_search.length === 0)) {
-    //   this.resultsService.showWorkKey(dados.key_search).subscribe(
-    //     datas => this.iterarDados(datas),
-    //     response => console.log(response.message)
-    //   );
-    //   this.loading = false;
-    // } else {
-    //   this.loading = false;
-    //   //console.log('Erro Total..');
-    // }
   }
 
   iterarDados(datas) {

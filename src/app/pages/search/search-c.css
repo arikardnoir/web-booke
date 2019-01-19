@@ -27,30 +27,39 @@
     justify-content: space-between;
     height: 100%;
     position: relative;
-    background: #b7c5e0;
+    background: white;
     padding: 10px;
 
 }
+
 .pesquisa input[type=text],
 .b-right input[type=text] {
     font-size: 1.3em;
     color: #2f2a53;
 }
+
+.b-right input::placeholder,
+.b-right input[type=text] {
+    color: white;
+}
+
 .field-search {
-    width: 100%;
+    min-width: 300px;
+    width: 90%;
     margin: 0 auto;
     border-radius: 50px;
     line-height: 45px;
     outline: none;
-    border: 2px solid white;
-    background: white;
     padding-left: 15px;
+    border: 2px solid white;
+    background: lightgray;
 }
-.btn-search {
-    width: 50%;
+
+._btn-search {
+    /* width: 50%; */
     margin: auto;
-    margin-top: 20px;
-    padding: 10px 25px;
+    margin-top: 41px;
+    padding: 10px 50px;
     border-radius: 124px;
     background-color: #2f2a53;
     border: 1px solid #2f2a53;
@@ -59,6 +68,23 @@
     outline: none;
 }
 
+.b-rigth_logo {
+    display: block;
+    margin: auto;
+    float: left;
+    margin-top: 5px;
+    padding-left: 10px;
+}
+
+.b-rigth_description {
+    width: 334.59px;
+    margin: auto;
+    margin-bottom: 51px;
+    display: block;
+    text-align: center;
+    font-size: 1.3em;
+    color: #666666;
+}
 
 
 /* LEFT */
@@ -72,12 +98,15 @@
     width: 100%;
     background: red;
 }
+
 .box_menu {
     position: relative;
 }
+
 .box_menu a {
     display: none;
 }
+
 .menu {
     width: 22px;
     height: 14px;
@@ -86,7 +115,7 @@
     position: absolute;
     right: 10px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-72%);
     cursor: pointer;
 }
 
@@ -102,6 +131,7 @@
 .menu::after {
     top: 5px;
 }
+
 .menu::before {
     top: 13px;
 }
@@ -160,6 +190,12 @@
     }
 }
 
+@media (min-width: 650px) {
+    .field-search {
+        width: 70%;
+    }
+}
+
 @media (min-width: 980px) {
 
     /*  Right  */
@@ -167,26 +203,51 @@
         width: 70%;
         padding-right: 20px;
     }
-    .btn-search {
-        width: 20%;
+
+    ._btn-search {
+        /* width: 20%; */
     }
+
     .field-search {
         width: 70%;
+        border: 2px solid white;
+        background: white;
     }
+
+    .b-rigth_logo {
+        display: none;
+    }
+
+    .b-rigth_description {
+        display: none;
+    }
+
+
 
     /*  Left  */
     .b-left {
         display: block;
         width: 30%;
     }
+
     .box_menu a {
         display: block;
     }
+
     .box_menu span {
         display: none;
     }
 
-    
+    .b-right {
+        background: #b7c5e0;
+    }
+
+    .b-right input::placeholder,
+    .b-right input[type=text] {
+        color: gray;
+    }
+
+
 }
 
 .modal_menu {

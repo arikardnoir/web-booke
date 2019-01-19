@@ -31,6 +31,8 @@ import { AboutComponent } from '@pages/about/about';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { viewerComponent } from '@pages/viewer/viewer';
 
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 
 @NgModule({
@@ -50,6 +52,7 @@ import { viewerComponent } from '@pages/viewer/viewer';
     BrowserAnimationsModule,
     SharedModule,
     PdfViewerModule,
+    NgxPaginationModule,
     LoadingModule.forRoot({
       animationType: ANIMATION_TYPES.threeBounce,
       backdropBackgroundColour: 'rgba(0,0,0,0.1)',

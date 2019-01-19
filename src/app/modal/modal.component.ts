@@ -31,6 +31,7 @@ export class ModalComponent implements OnInit {
 
     this.mService.notifier.subscribe( message => {
       this.message = message.work;
+      console.log(message.work)
       this.show = message.value
     });
 

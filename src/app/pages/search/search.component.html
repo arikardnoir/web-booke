@@ -7,12 +7,12 @@
             <span style="font-weight: 154!important;">Faça pesquisas de Artigos e monográfias feitos por estudantes angolanos</span>
         </div>
   
-        <img src="../../../assets/img/BOOKE-MOBILE2.png" alt="" width="280" height="250" style="display: block; margin: 0 auto; position: absolute; bottom: 13%; left: 50%; transform: translateX(-50%); 
+        <img src="../../../assets/img/BOOKE-MOBILE2.png" alt="" width="310" height="250" style="display: block; margin: 0 auto; position: absolute; bottom: 13%; left: 50%; transform: translateX(-50%); 
          
          ">
   
-        <div style="position: absolute; bottom: 0%; width: 100%">
-           <p style="text-align: left; font-size: .7em;padding-bottom: 7px; padding-left: 9px;">
+        <div style="position: absolute; bottom: 0%; width: 280px; height: 50px; left: 50%; transform: translateX(-50%);">
+           <p style="text-align: left; font-size: .7em;padding-bottom: 7px;">
                 <strong>&copy; 2019<a href="#" style="color:#2f2a53; text-decoration: none;">&nbsp;Booke</a>.&nbsp;</strong> All rights reserved.
            </p>
         </div>
@@ -20,14 +20,16 @@
   
     <div class="b-right" style="">
         <div class="box_menu" style="height: 50px;">
+            <img class="b-rigth_logo" src="../../../assets/img/BOOKE-HOME3.png" width="135" alt="" style="">
             <span class="menu"></span>
             <a [routerLink]="['/sobre']" style=" float: right; padding-top: 20px;text-decoration: none;color: white; font-size: 1.1em;">Sobre o Booke</a>
         </div>
 
         <div style="display: flex; flex-direction: column;
         width:100%; justify-content: center;">
+            <span class="b-rigth_description">Faça pesquisas de Artigos e monográfias feitos por estudantes angolanos</span>
             <input type="text" class="field-search" placeholder="Digite aqui" #wordSearch style="" (keyup.enter)="results(wordSearch.value)">
-            <button class="btn-search" (click)="results(wordSearch.value)">Pesquisar</button>
+            <button class="_btn-search" (click)="results(wordSearch.value)">Pesquisar</button>
         </div>
 
         <div style="height: 50px;">
