@@ -22,7 +22,6 @@ import { LoadingModule, ANIMATION_TYPES  } from 'ngx-loading';
 import { ApiHttp } from '@resources/api.http';
 import { SharedModule } from './shared/shared.module';
 import {FrontEndComponent} from '@pages/front-end/front-end.component';
-import { SearchFormComponent } from '@pages/search/search-form/search-form.component';
 import { ResultsService } from '@resources/results/results.service';
 import { ResultsHttp } from '@resources/results/results.http';
 import { DownloadHttp } from '@resources/download/download.http';
@@ -42,7 +41,6 @@ import { viewerComponent } from '@pages/viewer/viewer';
     SearchComponent,
     NotFoundComponent,
     AboutComponent,
-    SearchFormComponent,
     ModalComponent,
     viewerComponent,
     ],

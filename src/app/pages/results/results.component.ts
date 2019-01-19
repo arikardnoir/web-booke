@@ -16,18 +16,27 @@ export class ResultsComponent implements OnInit {
   public loading = false;
   public valueSearchMobile: any = '';
   filtroSearch: FormGroup;
+  searchTop: FormGroup;
+
+  public university_search = ''
+  public keyword_search = ''
 
   constructor(public searchService: SearchService, private resultsService: ResultsService, private route: ActivatedRoute,
     private fb: FormBuilder,
     private mService: ModalNotificationService, private notificationService: NotificationService) { }
 
   works = [];
+  verifyWorks: boolean = false;
 
   ngOnInit() {
 
     this.filtroSearch = this.fb.group({
       key_university: this.fb.control(''),
       key_search: this.fb.control('')
+    });
+
+    this.searchTop = this.fb.group({
+      search: this.fb.control('')
     });
 
     this.route.params.subscribe(
@@ -39,12 +48,19 @@ export class ResultsComponent implements OnInit {
 
   }
 
+  searchWork(value) {
+    this.getWorks(value['search']);
+  }
+
   getWorks(paramSearch) {
     this.loading = true;
 
     if (paramSearch) {
       this.searchService.searchAll(paramSearch).subscribe(data => {
         this.loading = false;
+        if(data['data'].length == 0) {
+          this.verifyWorks = true;
+        }
         this.iterarDados(data)
       })
 
@@ -58,21 +74,22 @@ export class ResultsComponent implements OnInit {
 
     this.loading = true;
     if (!(dados.key_university.length === 0)) {
-      this.resultsService.showWorkUni(dados.key_university).subscribe(
+      this.resultsService.getWorkFilter(this.university_search, this.keyword_search).subscribe(
         datas => this.iterarDados(datas),
         response => console.log(response.message)
       );
       this.loading = false;
-    } else if (!(dados.key_search.length === 0)) {
-      this.resultsService.showWorkKey(dados.key_search).subscribe(
-        datas => this.iterarDados(datas),
-        response => console.log(response.message)
-      );
-      this.loading = false;
-    } else {
-      this.loading = false;
-      //console.log('Erro Total..');
     }
+    // } else if (!(dados.key_search.length === 0)) {
+    //   this.resultsService.showWorkKey(dados.key_search).subscribe(
+    //     datas => this.iterarDados(datas),
+    //     response => console.log(response.message)
+    //   );
+    //   this.loading = false;
+    // } else {
+    //   this.loading = false;
+    //   //console.log('Erro Total..');
+    // }
   }
 
   iterarDados(datas) {
@@ -105,6 +122,19 @@ export class ResultsComponent implements OnInit {
   search_mobile() {
     this.getWorks(this.valueSearchMobile);
   }
+
+  animationSearch() {
+    document.querySelector('.span-search').classList.toggle('inclicked');
+    //console.log(document.querySelector('.span-search'));
+    document.querySelector('.s').classList.toggle('close');
+    
+    setTimeout(() => {
+      document.querySelector('.s').classList.toggle('s-border');
+    }, 1000)
+    
+    
+  }
+  
 
 }
 

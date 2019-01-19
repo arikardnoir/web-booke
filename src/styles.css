@@ -29,6 +29,7 @@
 
 .content-main{
     min-height: 100%;
+    padding-bottom: 148px;
 }
 .box-search{
     width: 100%;
@@ -43,6 +44,7 @@
     border-width: 1px;
     border-style: solid;
     border-color: rgb(219, 219, 219);
+    outline: none;
     border-image: initial;
     border-radius: 4px;
 }

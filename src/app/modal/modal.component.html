@@ -21,9 +21,9 @@
             <br>
             <br>
             <div class="btn_action">
-                <button class="btn" (click)="downloadFile()">
+                <a [attr.href]="url_download" class="btn">
                     Fazer Dowload do Arquivo
-                </button>
+                </a>
                 <button class="btn" (click)="pdfWrite()">
                   Visualizar/Abrir Trabalho
                 </button>

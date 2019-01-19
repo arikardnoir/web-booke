@@ -10,13 +10,10 @@ export class ResultsService {
     works = [];
     constructor(private resultsHttp: ResultsHttp) {}
 
-    showWorkUni(key_university) {
-      return this.resultsHttp.getWorkUni(key_university);
+    getWorkFilter(university_search?, keyword_search?) {
+      return this.resultsHttp.getWorkFilter(university_search, keyword_search);
     }
 
-    showWorkKey(key_search) {
-      return this.resultsHttp.getWorkKey(key_search);
-    }
 
     setWork(id,title,file) {
       window.sessionStorage.setItem('id', id);

@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
 }
-.btn_action button {
+.btn_action button, .btn_action a {
     padding: 10px 30px;
     background: #2f2a53;
     border: 1px solid #2f2a53;

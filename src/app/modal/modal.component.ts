@@ -5,6 +5,7 @@ import { Modal } from './modal.model';
 
 import { ModalNotificationService } from '../shared/messages/modal.service';
 import { DownloadService } from '@resources/download/download.service';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'rt-modal',
@@ -16,6 +17,8 @@ export class ModalComponent implements OnInit {
   recuperarSenhaF: FormGroup;
   message: Modal;
   show = false
+  url: string = environment.api;
+  public url_download;
 
   constructor(private fb: FormBuilder,
               private mService: ModalNotificationService,
@@ -35,19 +38,28 @@ export class ModalComponent implements OnInit {
       email: this.fb.control('', [Validators.required, Validators.email])
     });
 
+    setTimeout(() => {
+      this.url_download = `${this.url}/work/file/${this.nameFile}`;
+    }, 1500)
+
     this.nameFile = this.resultsService.getWork().file;
   } 
 
-  downloadFile() {
-    console.log(this.nameFile)
-    this.download.downloadFile(this.nameFile).subscribe(
-      datas => console.log(datas),
-      response => console.log(response)
-    );
+  downloadFile(value) {
+    console.log(value)
+    
+    
+    console.log(this.url)
+    // this.download.downloadFile(this.nameFile).subscribe(
+    //   datas => console.log('datas',datas),
+    //   response => console.log(response)
+    // );
   }
 
   pdfWrite() {
-    window.open('http://localhost:4200/visualizar', '_blank');
+    alert(this.nameFile)
+    console.log(`${this.url}/${this.nameFile}`)
+    window.open(`http://localhost:1234/visualizar/${this.nameFile}`, '_blank');
   }
 
 }

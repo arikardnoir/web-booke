@@ -1,97 +1,12 @@
 .main {
-  padding: 0 30px;
-  border: 2px solid red;
     height: 100%;
     width: 100%;
     position: absolute;
 }
-.sec_01 {
-  height: 595px;
-  background: white;
-  display: flex;
-}
-.sec_01 .sec_right, 
-.sec_02 .sec_left,
-.sec_03 .sec_right,
-.sec_04 .sec_left {
-  background-image: url(../../../assets/img/607.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 50% 20%;
-}
-.sec_01 .sec_left {
-  padding-right: 0;
-  padding-top: 60px;
-  padding-bottom: 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.title {
-  font-size: 3.4em;
-  margin-bottom: 0px;
-}
-.sub-title {
-  font-size: 1.4em;
-}
-.title, .sub-title, .description {
-  color: #2f2a53;
-}
-.title, 
-.sub-title, 
-.btn-navegar,
-.description {
-  margin-left: 100px;
-}
-.sec_left, .sec_right {
-  flex: 1;
-  height: 100%;
-  /* border: 1px solid black; */
-}
-.btn-navegar {
-  border: 1px solid;
-    width: 200px;
-    padding: 10px;
-    border-radius: 140px;
-    background: #2f2a53;
-    color: white;
-}
-.description {
-  width: 70%;
-  text-align: justify;
-}
-
-
-/* section 02*/
-.sec_00 {
-  height: 400px;
-  padding: 50px 0;
-  display: flex;
-}
-.sec_02 {
- 
-}
-
-/* section 03*/
-.sec_03 {
-  
-}
-
-/* section 04*/
-.sec_04 {
-
-}
-
-.c {
-  height: 500px;
-  background: slateblue;
-}
-
 
 .header {
   height: 60px;
    background: white;
-   padding: 10px 15px;
    /* box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1); */
    display: flex;
    align-items: center;

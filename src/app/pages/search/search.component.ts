@@ -4,7 +4,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'rt-search',
-  templateUrl: './search.component.html'
+  templateUrl: './search.component.html',
+  styleUrls: ['./search-c.css']
 })
 export class SearchComponent implements OnInit {
 
@@ -13,14 +14,16 @@ export class SearchComponent implements OnInit {
   hiddenLogo = false;
   keyWords = [];
   status;
-  constructor(private router: Router) { }
 
+  constructor(private router: Router) { }
 
   ngOnInit() {}
 
-  // results(keysearch: string) {
-  //   this.router.navigate(['/resultados', keysearch]);
-  // }
+  results(wordSearch) {
+    if(wordSearch != '') {
+      this.router.navigate(['/resultados', wordSearch]);
+    }
+  }
 
 
 }

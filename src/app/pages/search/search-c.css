@@ -1,0 +1,203 @@
+/* ------------------------------------------------------------------------- */
+@font-face {
+    font-family: helveticaneue;
+    src: url('../../../assets/Gotham-Light.otf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: helveticaneue;
+}
+
+.main {
+    /*    background: green;
+   height: 100vh;*/
+    min-height: 500px;
+    max-height: 100vh;
+}
+
+
+/* RIGHT */
+.b-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    background: #b7c5e0;
+    padding: 10px;
+
+}
+.pesquisa input[type=text],
+.b-right input[type=text] {
+    font-size: 1.3em;
+    color: #2f2a53;
+}
+.field-search {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 50px;
+    line-height: 45px;
+    outline: none;
+    border: 2px solid white;
+    background: white;
+    padding-left: 15px;
+}
+.btn-search {
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px 25px;
+    border-radius: 124px;
+    background-color: #2f2a53;
+    border: 1px solid #2f2a53;
+    color: white;
+    font-size: 1.1em;
+    outline: none;
+}
+
+
+
+/* LEFT */
+.b-left {
+    width: 0;
+    display: none;
+}
+
+.top-left {
+    min-height: 100vh;
+    width: 100%;
+    background: red;
+}
+.box_menu {
+    position: relative;
+}
+.box_menu a {
+    display: none;
+}
+.menu {
+    width: 22px;
+    height: 14px;
+    border-top: 3px solid black;
+    position: relative;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.menu::after,
+.menu::before {
+    content: '';
+    width: 22px;
+    border-top: 3px solid #2f2a53;
+    position: absolute;
+    z-index: 100;
+}
+
+.menu::after {
+    top: 5px;
+}
+.menu::before {
+    top: 13px;
+}
+
+.box-img img {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.text-description {
+    padding-top: 50px;
+}
+
+.text-description span {
+    display: block;
+    font-size: 1.7em;
+    line-height: 1.1;
+    font-weight: 150;
+    text-align: center;
+    color: grey;
+}
+
+.pesquisa {
+    position: relative;
+    width: 100%;
+}
+
+.pesquisa input {
+    width: 100%;
+    outline: none;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom: 1px solid #2f2a53;
+    padding-bottom: 4px;
+}
+
+
+
+/* icons */
+.fa-twitter,
+.fa-facebook,
+.fa-instagram {
+    color: white;
+    font-size: 1.5em !important;
+}
+
+
+
+/* media queries */
+
+@media only screen and (orientation: landscape) {
+    .main {
+        min-height: 500px;
+    }
+}
+
+@media (min-width: 980px) {
+
+    /*  Right  */
+    .b-right {
+        width: 70%;
+        padding-right: 20px;
+    }
+    .btn-search {
+        width: 20%;
+    }
+    .field-search {
+        width: 70%;
+    }
+
+    /*  Left  */
+    .b-left {
+        display: block;
+        width: 30%;
+    }
+    .box_menu a {
+        display: block;
+    }
+    .box_menu span {
+        display: none;
+    }
+
+    
+}
+
+.modal_menu {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: gray;
+    z-index: 100000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}

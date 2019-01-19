@@ -13,18 +13,9 @@
     </div>
 </header>
 <main class="main">
-
-    <!-- <div>
-        <label>PDF src</label>
-        <input type="file" (change)="onFileSeleted($event)" id="file">
-        <input type="text" placeholder="" [(ngModel)]="page">
-    </div> -->
-    <pdf-viewer 
-    [src]="pdfSrc" 
-    [render-text]="true" 
-    style="display: block; width: 100%; height: 100%; background: green;" 
-    [show-all]="true" 
-    [page]="page" 
-    [zoom]="0.5"></pdf-viewer>
-
+        {{ urlPath }}
+        <embed style="display: block; width: 100%; height: 100%;" src="http://localhost/api-booke/public/V1/work/file/mineracao-de-dados-das-provas-do-curso-de-computacao-do-brasil.pdf"
+            type="application/pdf" />
+    <!-- <embed style="display: block; width: 100%; height: 100%;" src="http://repositorio.unesc.net/bitstream/1/5739/1/LUTONADIO%20AFONSO%20KIMONAMESSO.pdf"
+        type="application/pdf" /> -->
 </main>

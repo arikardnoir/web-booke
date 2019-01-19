@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'viewer',
@@ -9,10 +11,19 @@ export class viewerComponent implements OnInit {
 
   pdfSrc: string = '';
   page: number = 1;
+  public url = environment.api;
+  public urlPath;
 
-  constructor() { }
+  constructor( private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.route.params.subscribe(
+      params => {
+        this.urlPath = `${this.url}/work/file/${params['path']}`
+      }
+    );
+
   }
 
   onFileSeleted(event) {
