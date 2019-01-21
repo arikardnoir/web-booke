@@ -267,7 +267,7 @@
     height: 100%;
     display: block;
     /* border-radius: 50%; */
-    background: rgba(0, 0, 0, .9);
+    background: #2f2a53;
     z-index: 100000;
     top: 0;
     bottom: 0;
