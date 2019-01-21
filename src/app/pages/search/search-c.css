@@ -59,13 +59,15 @@
     /* width: 50%; */
     margin: auto;
     margin-top: 41px;
-    padding: 10px 50px;
+    /* padding: 10px 50px; */
     border-radius: 124px;
     background-color: #2f2a53;
     border: 1px solid #2f2a53;
     color: white;
     font-size: 1.1em;
     outline: none;
+    width: 174.55px;
+    height: 43px;
 }
 
 .b-rigth_logo {
