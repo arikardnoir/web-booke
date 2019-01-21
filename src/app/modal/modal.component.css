@@ -1,0 +1,31 @@
+.resume {
+    margin-top: -37px;
+    font-size: 1.1em;
+}
+.btn_action {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.btn_action button, .btn_action a {
+    padding: 10px 30px;
+    background: #2f2a53;
+    border: 1px solid #2f2a53;
+    color: white;
+}
+.btn_action a {
+    margin-bottom: 10px;
+}
+
+
+
+@media (min-width: 500px) {
+    .btn_action {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .btn_action a {
+        margin-bottom: 0px;
+    }
+}

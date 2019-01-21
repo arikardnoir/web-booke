@@ -1,0 +1,8 @@
+node_modules/*
+/nbproject/private/
+/nbproject/
+/dist/
+.DS_Store
+.vscode
+/src/environments/environment.ts
+

@@ -1,0 +1,318 @@
+/* ------------------------------------------------------------------------- */
+@font-face {
+    font-family: helveticaneue;
+    src: url('../../../assets/Gotham-Light.otf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: helveticaneue;
+}
+
+.main {
+    /*    background: green;
+   height: 100vh;*/
+    min-height: 500px;
+    max-height: 100vh;
+}
+
+
+/* RIGHT */
+.b-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    background: white;
+    padding: 10px;
+
+}
+
+.pesquisa input[type=text],
+.b-right input[type=text] {
+    font-size: 1.3em;
+    color: #2f2a53;
+}
+
+.b-right input::placeholder,
+.b-right input[type=text] {
+    color: #666666;
+}
+
+.field-search {
+    min-width: 300px;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 50px;
+    line-height: 45px;
+    outline: none;
+    padding-left: 15px;
+    /* border: 2px solid white; */
+    border: 1px solid lightgray;
+}
+
+._btn-search {
+    /* width: 50%; */
+    margin: auto;
+    margin-top: 41px;
+    /* padding: 10px 50px; */
+    border-radius: 124px;
+    background-color: #2f2a53;
+    border: 1px solid #2f2a53;
+    color: white;
+    font-size: 1.1em;
+    outline: none;
+    width: 174.55px;
+    height: 43px;
+}
+
+.b-rigth_logo {
+    display: block;
+    margin: auto;
+    float: left;
+    margin-top: 5px;
+    padding-left: 10px;
+}
+
+.b-rigth_description {
+    width: 334.59px;
+    margin: auto;
+    margin-bottom: 51px;
+    display: block;
+    text-align: center;
+    font-size: 1.3em;
+    color: #666666;
+}
+
+
+/* LEFT */
+.b-left {
+    width: 0;
+    display: none;
+}
+
+.top-left {
+    min-height: 100vh;
+    width: 100%;
+    background: red;
+}
+
+.box_menu {
+    position: relative;
+}
+
+.box_menu a {
+    color: #666666;
+    float: right; 
+    padding-top: 20px;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: none;
+}
+
+.menu {
+    width: 22px;
+    height: 14px;
+    border-top: 3px solid black;
+    position: relative;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-72%);
+    cursor: pointer;
+}
+
+.menu::after,
+.menu::before {
+    content: '';
+    width: 22px;
+    border-top: 3px solid #2f2a53;
+    position: absolute;
+    z-index: 100;
+}
+
+.menu::after {
+    top: 5px;
+}
+
+.menu::before {
+    top: 13px;
+}
+
+.box-img img {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.text-description {
+    padding-top: 50px;
+}
+
+.text-description span {
+    display: block;
+    font-size: 1.7em;
+    line-height: 1.1;
+    font-weight: 150;
+    text-align: center;
+    color: grey;
+}
+
+.pesquisa {
+    position: relative;
+    width: 100%;
+}
+
+.pesquisa input {
+    width: 100%;
+    outline: none;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom: 1px solid #2f2a53;
+    padding-bottom: 4px;
+}
+
+
+
+/* icons */
+.fa-twitter,
+.fa-facebook,
+.fa-instagram {
+    color: white;
+    font-size: 1.5em !important;
+}
+
+
+
+/* media queries */
+
+@media only screen and (orientation: landscape) {
+    .main {
+        min-height: 500px;
+    }
+}
+
+@media (min-width: 650px) {
+    .field-search {
+        width: 70%;
+    }
+}
+
+@media (min-width: 980px) {
+
+    /*  Right  */
+    .b-right {
+        width: 70%;
+        padding-right: 20px;
+    }
+
+    ._btn-search {
+        /* width: 20%; */
+    }
+
+    .field-search {
+        width: 70%;
+        border: 2px solid white;
+        background: white;
+    }
+
+    .b-rigth_logo {
+        display: none;
+    }
+
+    .b-rigth_description {
+        display: none;
+    }
+
+
+
+    /*  Left  */
+    .b-left {
+        display: block;
+        width: 30%;
+    }
+
+    .box_menu a {
+        display: block;
+        color: white;
+    }
+
+    .box_menu span {
+        display: none;
+    }
+
+    .b-right {
+        background: #b7c5e0;
+    }
+
+    .b-right input::placeholder,
+    .b-right input[type=text] {
+        color: gray;
+    }
+
+
+}
+
+
+/* Efeitos Modal*/
+._menu {
+    display: none;
+}
+.modal_menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* border-radius: 50%; */
+    background: #2f2a53;
+    z-index: 100000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transition: 1s all ease; */
+    
+}
+
+.btn5 {
+    top: 0%;
+    bottom: 0;
+    left: 0%;
+    right: 0;
+    position: fixed;
+    /* transition: 500ms all ease; */
+    height: 100% !important;
+    width: 100% !important;
+    background: rgba(0, 0, 0, .9) !important;
+    
+}
+
+.btn5::before {
+    /* animation: anim 500ms ease-in-out; */
+    border-radius: 0%;
+    left: 0;
+    top: 0;
+}
+
+/* 
+@keframes anim {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+} */

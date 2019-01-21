@@ -1,0 +1,247 @@
+.title-trabalho{
+    color: #2f2a53;
+    font-size: 17px;
+    font-weight: bolder;
+}
+.name-author{
+    font-size: 0.8em;
+}
+
+/* conf btn login */
+.login{
+    border: 1px solid #2f2a53;
+    color: #2f2a53;
+    padding: 5px 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    
+}
+.login:hover{
+    text-decoration: none;
+    background-color: #2f2a53;
+    color: white;
+    cursor: pointer;
+}
+
+.login:focus{color:#2f2a53;}
+
+.content-main{
+    min-height: 100%;
+    padding-bottom: 100px;
+}
+.box-search{
+    width: 100%;
+    position: relative;
+}
+.box-search input{
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 4px;
+    width: 100%;
+    height: 42px;
+    transition: box-shadow 200ms ease-in;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(219, 219, 219);
+    outline: none;
+    border-image: initial;
+    border-radius: 4px;
+}
+
+.search-content input{
+    padding-left: 10px;
+}
+.search-content{
+    width: 85%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box-btn_search{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.btn-search{
+    width: 40%;
+    padding: 7px 0;
+}
+.box-logo{
+    padding-bottom: 25px;
+}
+.box-logo img{
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+
+.box-form{
+    border: 2px solid rgba(0,0,0,.1);
+    padding: 40px;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
+    border-radius: 5px;
+    background-color: #fff; 
+}
+input{
+    width: 100%;
+    margin-top: 10px;
+}
+.person-img-wrapper img{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+}
+.sign-up-wrapper .render-person .person-img-wrapper img.person-img {
+    animation: dragperson 3s ease-in-out infinite;
+}
+@keyframes dragperson{
+    0%, 100% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 600px){ 
+    .search-content{
+        width: 70%;
+    }
+}
+
+@media (min-width: 765px){
+    .search-content{
+        width: 55%;
+    }
+    .content_trabalho {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 991px){ 
+    .box-img{
+        display: none;
+    }
+    .b-form{
+        width: 100%;
+    }
+}
+
+@media (min-width: 1024px){
+    .search-content{
+        width: 45%;
+    }
+}
+
+@media (min-width: 1167px){
+    .search-content{
+        width: 39%;
+    }
+}
+
+
+/* login */
+
+.content-login{
+    padding-top: 50px;
+}
+.title-form{
+    font-size: 1.2em;
+    text-align: center;
+}
+.b-text{
+    padding: 15px 0 35px 0 ;
+}
+.b-text span{
+    color: #666;
+    display: block;
+    text-align: left;
+    font-weight: 300;
+}
+.box_btn-login{
+    display: flex;
+    justify-content: center;
+    clear: both;
+    margin-top: 50px;
+}
+.btn-login{
+    border: none;
+    background-color: #2f2a53;
+    border-radius: 30px;
+    color: #FFF;
+    text-transform: uppercase;
+    padding: 14px 90px;
+    font-weight: 600;
+    transition: all 130ms ease-in-out;
+    margin: 0;
+}
+.remember-checkbox-wrapper input, .remember-checkbox-wrapper label{
+    display: inline;
+}
+.esqueceu_senha button{
+    float: right;
+    border: 0 solid transparent;
+    outline: none;
+}
+.box_criar-conta{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+
+
+
+
+/* home */
+.content_trabalho{
+    min-height: 124px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    padding: 10px 10px 10px 10px;
+}
+/* .content_trabalho:hover{
+    background-color: aliceblue;
+} */
+.content_trabalho h3{
+    margin-top: 3px;
+}
+
+.key-work{
+    color: slategray;
+}
+.stly-geral{
+    font-size: 0.9em;
+}
+
+.space-paragrafo{
+    margin-top: -5px;
+}
+
+.key-work-styl{
+    display: inline-block;
+    border: 1px solid rgb(220, 224, 224);
+    padding: 4px 6px;
+    border-radius: 3px;
+    margin-right: 5px;
+    margin-bottom: 4px;
+    background-color: white;
+}
+.content_works{
+    padding-top: 20px;
+}
+
+
+
+
+.sh{
+    transition: 0.4s ease-in-out;
+    opacity: 1!important;
+    bottom: 80px!important;
+}
