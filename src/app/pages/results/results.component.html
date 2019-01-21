@@ -12,7 +12,7 @@
     </div>
 
     <div class="col-xs-10">
-      <div class="" *ngIf="!hiddenLogo">
+      <div class="">
         <!-- <a [routerLink]="['/']" class="logo">
           <img src="./assets/img/logo_2.png" alt="">
         </a>  -->
@@ -22,7 +22,7 @@
             <div class="box-search-top">
               <span class="s s-border" (click)="animationSearch()"></span>
               <input class="span-search" style="outline-color: #2f2a53;" type="text" formControlName="search"
-                (keyup.enter)="searchWork(searchTop.value)" [(ngModel)]="valueSearch">
+                (keyup.enter)="searchWork(searchTop.value)">
 
 
               <!-- <input type="text" name="input" formControlName="search" class="input" (keyup.enter)="_searchTop(searchTop.value)"
@@ -135,10 +135,8 @@
   <div class="box_footer">
     <footer class="main-footer">
       <div>
-        <strong>Copyright &copy; 2018 <a href="#" style="color:#fff;">&nbsp;TecGenius</a>.&nbsp;</strong> All rights
-        reserved.
+        <p>© 2019 Booke.  All rights reserved.</p>
       </div>
-
     </footer>
   </div>
 

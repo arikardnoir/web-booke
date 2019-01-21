@@ -7,28 +7,28 @@
             <span style="font-weight: 154!important;">Faça pesquisas de Artigos e monográfias feitos por estudantes angolanos</span>
         </div>
   
-        <img src="../../../assets/img/BOOKE-MOBILE2.png" alt="" width="310" height="250" style="display: block; margin: 0 auto; position: absolute; bottom: 13%; left: 50%; transform: translateX(-50%); 
+        <img src="../../../assets/img/BOOKE-HOME.png" alt="" style="display: block; margin: 0 auto; position: absolute; bottom: 13%; left: 50%; transform: translateX(-50%); 
          
          ">
   
-        <div style="position: absolute; bottom: 0%; width: 280px; height: 50px; left: 50%; transform: translateX(-50%);">
+        <div style="position: absolute; bottom: 0%; width: 228px; height: 50px; left: 50%; transform: translateX(-50%);">
            <p style="text-align: left; font-size: .7em;padding-bottom: 7px;">
                 <strong>&copy; 2019<a href="#" style="color:#2f2a53; text-decoration: none;">&nbsp;Booke</a>.&nbsp;</strong> All rights reserved.
            </p>
         </div>
     </div>
   
-    <div class="b-right" style="">
+    <div class="b-right">
         <div class="box_menu" style="height: 50px;">
-            <img class="b-rigth_logo" src="../../../assets/img/BOOKE-HOME3.png" width="135" alt="" style="">
-            <span class="menu"></span>
-            <a [routerLink]="['/sobre']" style=" float: right; padding-top: 20px;text-decoration: none;color: white; font-size: 1.1em;">Sobre o Booke</a>
+            <img class="b-rigth_logo" src="./assets/img/logo_2.png" alt="">
+            <span class="menu" (click)="showOrHideMenu()"></span>
+            <a [routerLink]="['/sobre']">Sobre</a>
         </div>
 
         <div style="display: flex; flex-direction: column;
         width:100%; justify-content: center;">
             <span class="b-rigth_description">Faça pesquisas de Artigos e monográfias feitos por estudantes angolanos</span>
-            <input type="text" class="field-search" placeholder="Digite aqui" #wordSearch style="" (keyup.enter)="results(wordSearch.value)">
+            <input type="text" class="field-search" placeholder="Digite aqui" #wordSearch (keyup.enter)="results(wordSearch.value)">
             <button class="_btn-search" (click)="results(wordSearch.value)">Pesquisar</button>
         </div>
 
@@ -41,4 +41,7 @@
    
   </main>
 
-  <div class="modal_menu"></div>
+  <div [class.modal_menu]="hideShow" class="_menu">
+    <span (click)="hideMenu()" style="position: absolute; top: 3%; right: 7%; color: white; font-size: 2em;">X</span>
+    <a [routerLink]="['/sobre']" style="font-size: 3em; color: white;">Sobre</a>
+  </div>

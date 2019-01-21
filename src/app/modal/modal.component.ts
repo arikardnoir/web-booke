@@ -31,7 +31,11 @@ export class ModalComponent implements OnInit {
 
     this.mService.notifier.subscribe( message => {
       this.message = message.work;
-      console.log(message.work)
+
+      setTimeout(() => {
+        this.url_download = `${this.url}/work/file/${this.message['initials']}/${this.message['file']}`;
+      }, 1500)
+      
       this.show = message.value
     });
 
@@ -39,28 +43,21 @@ export class ModalComponent implements OnInit {
       email: this.fb.control('', [Validators.required, Validators.email])
     });
 
-    setTimeout(() => {
-      this.url_download = `${this.url}/work/file/${this.nameFile}`;
-    }, 1500)
-
     this.nameFile = this.resultsService.getWork().file;
   } 
 
-  downloadFile(value) {
-    console.log(value)
+  downloadFile() {
     
     
     console.log(this.url)
-    // this.download.downloadFile(this.nameFile).subscribe(
-    //   datas => console.log('datas',datas),
-    //   response => console.log(response)
-    // );
+    this.download.downloadFile(this.nameFile).subscribe(
+      datas => console.log('datas',datas),
+      response => console.log(response)
+    );
   }
 
   pdfWrite() {
-    alert(this.nameFile)
-    console.log(`${this.url}/${this.nameFile}`)
-    window.open(`http://localhost:1234/visualizar/${this.nameFile}`, '_blank');
+    window.open(`https://drive.google.com/viewerng/viewer?embedded=true&url=${this.url}/work/view/${this.message['initials']}/${this.message['file']}`, '_blank')
   }
 
 }

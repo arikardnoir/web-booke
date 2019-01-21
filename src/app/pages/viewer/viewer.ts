@@ -20,7 +20,8 @@ export class viewerComponent implements OnInit {
 
     this.route.params.subscribe(
       params => {
-        this.urlPath = `${this.url}/work/file/${params['path']}`
+        console.log(params)
+        this.urlPath = `${this.url}/work/view/${params['initials']}/${params['file']}`
       }
     );
 

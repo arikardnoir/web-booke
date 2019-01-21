@@ -225,10 +225,12 @@ input{
 }
 
 .key-work-styl{
+    display: inline-block;
     border: 1px solid rgb(220, 224, 224);
     padding: 4px 6px;
     border-radius: 3px;
     margin-right: 5px;
+    margin-bottom: 4px;
     background-color: white;
 }
 .content_works{

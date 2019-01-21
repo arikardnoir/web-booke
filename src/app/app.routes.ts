@@ -18,6 +18,6 @@ export const ROUTES: Routes = [
         ]
     },
     {path: 'sobre', component: AboutComponent},
-    {path: 'visualizar/:path', component: viewerComponent},
+    {path: 'visualizar/:initials/:file', component: viewerComponent},
     {path: '**', component: NotFoundComponent}
 ];

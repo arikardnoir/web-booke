@@ -9,7 +9,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="resume">  
+          <div class="resume">
             <p><b>Autor:</b> {{ message.author }}</p>
             <p><b>Curso:</b> {{ message.course }}</p>
             <p><b>Universidade:</b> {{ message.name_university }}</p>
@@ -21,12 +21,12 @@
             <br>
             <br>
             <div class="btn_action">
-                <a [attr.href]="url_download" class="btn">
-                    Fazer Dowload do Arquivo
-                </a>
-                <button class="btn" (click)="pdfWrite()">
-                  Visualizar/Abrir Trabalho
-                </button>
+              <a [attr.href]="url_download" class="btn">
+                Fazer Dowload do Arquivo
+              </a>
+              <button class="btn" (click)="pdfWrite()">
+                Visualizar/Abrir Trabalho
+              </button>
             </div>
           </div>
         </div>
@@ -38,29 +38,29 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">  
-        <div *ngIf="!show">
-          <div class="modal-body">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div *ngIf="!show">
+        <div class="modal-body">
+          <div>
+            <p>
+              Digite seu endereço de e-mail e enviaremos um link para redefinir sua senha.
+            </p>
             <div>
-              <p>
-                Digite seu endereço de e-mail e enviaremos um link para redefinir sua senha.
-              </p>
-              <div>
-                <form [formGroup]="recuperarSenhaF">
-                  <input type="email" placeholder="Endereço de Email" formControlName="email" #email style=" height: 30px;
+              <form [formGroup]="recuperarSenhaF">
+                <input type="email" placeholder="Endereço de Email" formControlName="email" #email style=" height: 30px;
                   border-radius: 3px;
                   border: 1px solid #2f2a53;
                   padding-left: 10px;">
-                </form>
-              </div>
+              </form>
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" style="color:#2f2a53;border:1px solid #2f2a53;">Cancelar</button>
-            <button type="button" class="btn btn-primary" style="background-color:#2f2a53; color:white;" (click)="forget_pass(recuperarSenhaF.value)">Enviar</button>
-          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" style="color:#2f2a53;border:1px solid #2f2a53;">Cancelar</button>
+          <button type="button" class="btn btn-primary" style="background-color:#2f2a53; color:white;" (click)="forget_pass(recuperarSenhaF.value)">Enviar</button>
         </div>
       </div>
     </div>
   </div>
+</div>
