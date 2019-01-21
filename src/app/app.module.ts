@@ -32,6 +32,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { viewerComponent } from '@pages/viewer/viewer';
 
 import {NgxPaginationModule} from 'ngx-pagination';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 
 
@@ -72,7 +73,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ResultsHttp,
     ResultsService,
     DownloadHttp,
-    DownloadService
+    DownloadService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
    ],
   bootstrap: [AppComponent]
 })
