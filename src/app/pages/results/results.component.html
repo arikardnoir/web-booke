@@ -113,11 +113,13 @@
       </div>
 
       <div class="col-xs-12" *ngIf="verifyWorks">
-        <p class="text-center msgNotFound"><i class="fa fa-search"></i> Termo da Pesquisa não consta em nossa base de
-          dados!</p>
+        <p class="text-center msgNotFound">
+          Termo da Pesquisa não consta em nossa base de dados!
+        </p>
       </div>
 
-      <div style="height:25px; display: flex; justify-content: center; padding-top: 20px;">
+      <div style="height:25px; display: flex; justify-content: center; padding-top: 20px;"
+         *ngIf="works.length > 10">
         <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
 
