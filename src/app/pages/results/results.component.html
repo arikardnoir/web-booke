@@ -100,29 +100,36 @@
             <a type="button" data-toggle="modal" style="color:#2f2a53; cursor: pointer" data-target="#exampleModal"
               (click)="showResumo(work.id)">{{ work.title }}</a>
           </h3>
-          <p class="name-author">Autor(a): {{ work.author }}, {{ work.author2 }}, {{ work.author3 }}</p>
+         
+            <p class="name-author">Autor(a): 
+              <span>{{ work.author }}</span>
+              <span *ngIf="work.author2">, {{ work.author2 }} </span>
+              <span *ngIf="work.author3">, {{ work.author3 }}</span>
+            </p>
+         
           <p class="name-author space-paragrafo">{{ work.course }}</p>
           <p class="stly-geral space-paragrafo">
             Resumo <a style="color:#2f2a53; font-weight: bold; cursor: pointer;" type="button" data-toggle="modal"
               data-target="#exampleModal" (click)="showResumo(work.id)">Ler o resumo</a>
           </p>
           <p class="stly-geral key-work space-paragrafo">
-            Palavras-Chave: <span class="key-work-styl" *ngFor="let keyword of work.keywords">{{ keyword }}</span>
+            Palavras-Chaves: <span class="key-work-styl" *ngFor="let keyword of work.keywords">{{ keyword }}</span>
           </p>
         </div>
       </div>
 
       <div class="col-xs-12" *ngIf="verifyWorks">
-        <p class="text-center msgNotFound"><i class="fa fa-search"></i> Termo da Pesquisa não consta em nossa base de
-          dados!</p>
+        <p class="text-center msgNotFound">
+          Termo da Pesquisa não consta em nossa base de dados!
+        </p>
       </div>
 
-      <div style="height:25px; display: flex; justify-content: center; padding-top: 20px;">
+      <div style="height:25px; display: flex; justify-content: center; padding-top: 20px;"
+         *ngIf="works.length > 10">
         <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
 
     </div>
-
   </div>
 
   <div class="clearfix"></div>

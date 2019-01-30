@@ -577,7 +577,11 @@ input {
   color: #2f2a53;
   font-size: 16px;
   font-weight: 400;
+<<<<<<< HEAD
   font-family: Roboto;
+=======
+  font-family: helveticaneue;
+>>>>>>> master
   outline: 0;
   -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
   transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
