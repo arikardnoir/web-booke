@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    api: 'http://api.booke-edu.com/V1',
+    api: 'https://api.booke-edu.com/V1',
   };
