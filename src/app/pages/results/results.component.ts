@@ -155,6 +155,12 @@ export class ResultsComponent implements OnInit {
     
     
   }
+
+  getUniversity() {
+    this.resultsService.getUniversity().subscribe((resp) => {
+      console.log(resp)
+    })
+  }
   
 
 }

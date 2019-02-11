@@ -7,9 +7,7 @@
             <span style="font-weight: 154!important;">Faça pesquisas de artigos e monografias feitas por estudantes angolanos</span>
         </div>
   
-        <img src="../../../assets/img/BOOKE-HOME.png" alt="" style="display: block; margin: 0 auto; position: absolute; bottom: 13%; left: 50%; transform: translateX(-50%); 
-         
-         ">
+        <img src="../../../assets/img/BOOKE-HOME.png" alt="" style="display: block; margin: 0 auto; position: absolute; bottom: 13%; left: 50%; transform: translateX(-50%);">
   
         <div class="text" style="position: absolute; bottom: 0%; width: 228px; height: 50px; left: 50%; transform: translateX(-50%);">
            <p style="text-align: left; font-size: .7em;padding-bottom: 7px;">
@@ -21,8 +19,10 @@
     <div class="b-right">
         <div class="box_menu" style="height: 50px;">
             <img class="b-rigth_logo" src="./assets/img/logo_2.png" alt="">
-            <span class="menu" (click)="showOrHideMenu()"></span>
+            <span class="menu" (click)="showOrHideMenu()"></span>     
+            <a [routerLink]="['/operation']" style="font-size: bold">Como Funciona</a>       
             <a [routerLink]="['/sobre']" style="font-size: bold">Sobre</a>
+            <a routerLinkActive="Active" [routerLink]="['/']" style="font-size: bold; color: #2f2a53">Home</a>
         </div>
 
         <div style="display: flex; flex-direction: column;
@@ -41,7 +41,14 @@
    
   </main>
 
-  <div [class.modal_menu]="hideShow" class="_menu">
+  <div class="m _menu">
+    <span (click)="hideMenu()" style="position: absolute; top: 3%; right: 7%; color: white; font-size: 2em; ">X</span>
+    <a [routerLink]="['/home']" class="active" style="font-size: 3em; color: white;">Home</a>
+    <a [routerLink]="['/sobre']" style="font-size: 3em; color: white;">Sobre</a>
+    <a [routerLink]="['/operation']" style="font-size: 3em; color: white;">Como Funciona</a>
+  </div>
+
+   <!-- <div [class.modal_menu]="hideShow" class="_menu">
     <span (click)="hideMenu()" style="position: absolute; top: 3%; right: 7%; color: white; font-size: 2em;">X</span>
     <a [routerLink]="['/sobre']" style="font-size: 3em; color: white;">Sobre</a>
-  </div>
+  </div> -->

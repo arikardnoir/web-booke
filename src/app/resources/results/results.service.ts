@@ -43,4 +43,8 @@ export class ResultsService {
 
       return this.works;
     }
+
+    getUniversity() {
+      return this.resultsHttp.getUniversity();
+    }
 }

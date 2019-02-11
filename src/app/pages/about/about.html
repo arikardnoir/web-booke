@@ -1,76 +1,124 @@
+<header>
+    <div class="logo"><img src="./assets/img/logo_2.png"></div>
+    <nav>
+        <ul>
+            <li>
+                <a [routerLink]="['/']">Home</a>
+            </li>
+            <li>
+                <a [routerLink]="['/sobre']" class="active">Sobre</a>
+            </li>
+            <li>
+                <a [routerLink]="['/operation']">Como Funciona</a>
+            </li>
+          
+        </ul>
+    </nav>
+    <div class="menu-toggle" (click)="showOrHideMenu()">
+        <i class="fa fa-bars" aria-hidden="true" style="color: #2f2a53"></i>
+    </div>
+</header>
+
+<main>
+    <router-outlet></router-outlet>
+</main>
+
+<footer class="about-footer" style="background: #2f2a53; height: 85px;">
+    <div class="about-footer-div">
+        <img src="../../../assets/img/log.png" width="100px">
+        <p>© 2019 Booke. All rights reserved.</p>
+    </div>  
+    <div class="footer-icon">
+        <a href="https://www.facebook.com/Booke-235168787411406/" target="_blank">
+            <i class="fa fa-facebook" style="float: right; padding: 5px; margin: 0 5px;"></i>
+        </a>
+        <a href="https://instagram.com/booke.app?utm_source=ig_profile_share&igshid=1iii1692zryzc" target="_blank">
+            <i class="fa fa-instagram" style="float: right; padding: 5px; margin: 0 5px;"></i>
+        </a>
+        <a href="https://twitter.com/AppBooke" target="_blank">
+            <i class="fa fa-twitter" style="float: right; padding: 5px; margin: 0 5px;"></i>
+        </a>
+    </div>
+</footer>
+
+<!--
+
+<header>
+    <div class="">
+        <a [routerLink]="['/']" class="logo">
+            <img src="../../../assets/img/BOOKE-HOME3.png" alt="" style="">
+        </a>
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <a [routerLink]="['/']" style="font-size: bold">Home</a>
+            </li>
+            <li>
+                <a [routerLink]="['/sobre']" class="active" style="font-size: bold">sobre</a>
+            </li>
+            <li>
+                <a [routerLink]="['/operation']" style="font-size: bold">Como Funciona</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="menu-toggle">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+
+</header>
+
+
+
 <header class="header">
     <div class="col-xs-2 col-sm-3">
         <div class="col-xs-12" style="padding-left:0;">
-            <div class="h_left" style="padding-left: 25%;">
+            <div class="h_left" style="padding-left: 25%; align-items: center;">
                 <a [routerLink]="['/']" class="logo">
-                    <img src="./assets/img/logo_2.png" alt="">
+                    <span class="menu" (click)="showOrHideMenu()"></span>
+                    <img src="../../../assets/img/BOOKE-HOME3.png" alt="" style="">
                 </a>
+                <div class="box_menu_a">
+                    <a [routerLink]="['/']" style="font-size: bold">Home</a>
+                    <a routerLinkActive="Ative" [routerLink]="['/sobre']" style="font-size: bold; color: #2f2a53">Sobre</a>
+                    <a [routerLink]="['/operation']" style="font-size: bold">Funcionamento</a>
+                </div>
             </div>
         </div>
     </div>
+
     <div class="col-xs-10">
     </div>
 </header>
-<main class="">
-    <section class="sec_01" style="">
-        <div class="sec_left">
-            <div>
-                <!-- <h1 class="title">BOOKE</h1> -->
 
-            </div>
-            <!-- <button class="btn-navegar">Outros Serviços</button> -->
-            <div class="description">
-                <img src="../../../assets/img/booke.png" height="25px" width="121px" style="display: block; margin: 0 0 15px 0;"
-                    alt="">
-                <p style="text-align: justify">
-                    O booke é uma ferramenta de pesquisa online que permite
-                    pesquisar artigos, monografias, dissertações e livros escritos
-                    por angolanos. Os mesmos foram devidamente revisados e são
-                    publicados em parceria com universidades e/ou órgãos de ensino,
-                    com a pretensão de oferecer ajuda referente a futuras pesquisas.
-                </p>
-            </div>
-        </div>
-        <div class="sec_right">
-            <!-- <img src="../../../assets/img/607.png" alt=""> -->
-        </div>
-    </section>
-    <section class="sec_00 sec_02" style="background:#f2f5f9;">
-        <div class="box-image">
-            <img src="../../../assets/img/Prancheta 8.png" alt="">
-        </div>
-        <div class="box-desc">
-            <p>Por ser um sistema web, o público precisará ter acesso a internet para fazer as suas pesquisas na base
-                de dados.</p>
-        </div>
-    </section>
-    <section class="sec_00 sec_03">
-        <div class="box-desc">
-            <p> O acesso à plataforma Booke é gratuito.</p>
-        </div>
-        <div class="box-image">
-            <img src="../../../assets/img/Prancheta 7.png" alt="">
-        </div>
-    </section>
-    <section class="sec_00 sec_04" style="background:#f2f5f9;">
-        <div class="box-image">
-            <img src="../../../assets/img/Prancheta 6.png" alt="">
-        </div>
-        <div class="box-desc">
-            <p>Só poderão fazer as postagens de trabalhos acadêmicos as instituições de ensino responsáveis pelos
-                trabalhos já concluídos e apresentados.</p>
-        </div>
-    </section>
-    <section class="sec_00 sec_05">
-        <div class="box-desc">
-            <p>O público terá as opções de visualizar somente os trabalhos na plataforma para uma rápida leitura ou até
-                mesmo efetuar o download do documento para maiores consultas, tudo de forma Gratuita.</p>
-        </div>
-        <div class="box-image">
-            <img src="../../../assets/img/ass.png" alt="">
-        </div>
-    </section>
+<main>
+    <router-outlet></router-outlet>
 </main>
-<footer class="about-footer" style="background: #2f2a53; height: 65px;">
-    <p>© 2019 Booke. All rights reserved.</p>
-</footer>
+
+
+<div [class.modal_menu]="hideShow" class="_menu" >
+    <span (click)="hideMenu()" style="position: absolute; top: 2%; right: 7%; color: white; font-size: 2em;">X</span>
+    <ul></ul><a [routerLink]="['/']" style="font-size: 3em; color: black;">Home</a>
+    
+</div>
+
+
+<footer class="about-footer" style="background: #2f2a53; height: 85px;">
+    <div class="about-footer-div">
+        <img src="../../../assets/img/BOOKE-HOME3.png" style="background-color: white;">
+        <p>© 2019 Booke. All rights reserved.</p>
+    </div>  
+    <div class="footer-icon">
+        <a href="https://www.facebook.com/Booke-235168787411406/" target="_blank">
+            <i class="fa fa-facebook" style="float: right; padding: 5px; margin: 0 5px;"></i>
+        </a>
+        <a href="https://instagram.com/booke.app?utm_source=ig_profile_share&igshid=1iii1692zryzc" target="_blank">
+            <i class="fa fa-instagram" style="float: right; padding: 5px; margin: 0 5px;"></i>
+        </a>
+        <a href="https://twitter.com/AppBooke" target="_blank">
+            <i class="fa fa-twitter" style="float: right; padding: 5px; margin: 0 5px;"></i>
+        </a>
+    </div>
+</footer> 
+
+-->

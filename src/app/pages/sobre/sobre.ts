@@ -1,13 +1,11 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
-  selector: 'rt-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search-c.css']
+  selector: 'sobre',
+  templateUrl: './sobre.html',
+  styleUrls: ['./sobre.css']
 })
-export class SearchComponent implements OnInit {
+export class SobreComponent implements OnInit {
 
   private work;
   works = [];
@@ -16,14 +14,9 @@ export class SearchComponent implements OnInit {
   status;
   public hideShow: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor() { }
 
-  ngOnInit() {}
-
-  results(wordSearch) {
-    if(wordSearch != '') {
-      this.router.navigate(['/resultados', wordSearch]);
-    }
+  ngOnInit() {
   }
 
   showOrHideMenu() {
@@ -48,7 +41,4 @@ export class SearchComponent implements OnInit {
     }
   }
 
-
 }
-
-

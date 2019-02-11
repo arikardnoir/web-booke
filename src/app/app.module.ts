@@ -33,7 +33,8 @@ import { viewerComponent } from '@pages/viewer/viewer';
 
 import {NgxPaginationModule} from 'ngx-pagination';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-
+import { OperationComponent } from './pages/operation/operation.component';
+import { SobreComponent } from '@pages/sobre/sobre';
 
 
 @NgModule({
@@ -46,6 +47,9 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     AboutComponent,
     ModalComponent,
     viewerComponent,
+    OperationComponent,
+    SobreComponent
+    
     ],
   imports: [
     BrowserModule,

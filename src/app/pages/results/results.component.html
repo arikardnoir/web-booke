@@ -76,7 +76,12 @@
         <form [formGroup]="filtroSearch">
           <div class="">
             <div class="col-xs-12">
+                <select class="form-control" (click)="getUniversity()">
+                    <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Opção 1</font></font></option>
+                  </select>
+              <!--
               <input type="text" class="form-control" placeholder="Universidade" formControlName="university_search">
+              -->
             </div>
             <div class="col-xs-12">
               <input type="text" class="form-control" placeholder="Palavra-Chave" formControlName="keyword_search">

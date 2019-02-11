@@ -10,6 +10,11 @@ export class ResultsHttp {
         return req;
     }
 
+    getUniversity() {
+        const req = this.api.get('university');
+        return req;
+    }
+
 
     //work?key_search=${keysearch}
 
