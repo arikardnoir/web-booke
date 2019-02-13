@@ -160,7 +160,6 @@ export class ResultsComponent implements OnInit {
   getUniversity() {
     this.resultsService.getUniversity().subscribe((resp) => {
       this.universities = resp['data'];
-      console.log(this.universities);
     })
   }
   
