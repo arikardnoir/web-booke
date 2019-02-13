@@ -4,7 +4,7 @@
     src: url('../../../assets/Gotham-Light.otf');
 }
 
-* {
+*:not(.fa){
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -192,7 +192,7 @@
 /* Efeitos Modal*/
 ._menu {
     left: -100%;
-    transition: left 2s ease-in-out !important;
+    transition: left 1s ease-in-out !important;
     
 }
 .modal_menu {

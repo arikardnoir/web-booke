@@ -76,9 +76,12 @@
         <form [formGroup]="filtroSearch">
           <div class="">
             <div class="col-xs-12">
-                <select class="form-control" (click)="getUniversity()">
-                    <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Opção 1</font></font></option>
-                  </select>
+              <select class="form-control" (click)="getUniversity()" formControlName="university_search">
+                <option value="" disabled selected>Selecione uma Universidade</option>
+                <option *ngFor="let university of universities" [value]="university.name_university">
+                  {{ university.name_university }}
+                </option>
+              </select>
               <!--
               <input type="text" class="form-control" placeholder="Universidade" formControlName="university_search">
               -->
@@ -105,13 +108,13 @@
             <a type="button" data-toggle="modal" style="color:#2f2a53; cursor: pointer" data-target="#exampleModal"
               (click)="showResumo(work.id)">{{ work.title }}</a>
           </h3>
-         
-            <p class="name-author">Autor(a): 
-              <span>{{ work.author }}</span>
-              <span *ngIf="work.author2">, {{ work.author2 }} </span>
-              <span *ngIf="work.author3">, {{ work.author3 }}</span>
-            </p>
-         
+
+          <p class="name-author">Autor(a):
+            <span>{{ work.author }}</span>
+            <span *ngIf="work.author2">, {{ work.author2 }} </span>
+            <span *ngIf="work.author3">, {{ work.author3 }}</span>
+          </p>
+
           <p class="name-author space-paragrafo">{{ work.course }}</p>
           <p class="stly-geral space-paragrafo">
             Resumo <a style="color:#2f2a53; font-weight: bold; cursor: pointer;" type="button" data-toggle="modal"
@@ -129,8 +132,7 @@
         </p>
       </div>
 
-      <div style="height:25px; display: flex; justify-content: center; padding-top: 20px;"
-         *ngIf="works.length > 10">
+      <div style="height:25px; display: flex; justify-content: center; padding-top: 20px;" *ngIf="works.length > 10">
         <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
 
@@ -145,9 +147,21 @@
 
 
   <div class="box_footer">
-    <footer class="main-footer">
-      <div>
-        <p>© 2019 Booke.  All rights reserved.</p>
+    <footer class="about-footer" style="background: #2f2a53; height: 85px;">
+      <div class="about-footer-div">
+        <img src="../../../assets/img/log.png" width="100px">
+        <p>© 2019 Booke. All rights reserved.</p>
+      </div>
+      <div class="footer-icon">
+        <a href="https://www.facebook.com/Booke-235168787411406/" target="_blank">
+          <i class="fa fa-facebook" style="float: right; padding: 5px; margin: 0 5px;"></i>
+        </a>
+        <a href="https://instagram.com/booke.app?utm_source=ig_profile_share&igshid=1iii1692zryzc" target="_blank">
+          <i class="fa fa-instagram" style="float: right; padding: 5px; margin: 0 5px;"></i>
+        </a>
+        <a href="https://twitter.com/AppBooke" target="_blank">
+          <i class="fa fa-twitter" style="float: right; padding: 5px; margin: 0 5px;"></i>
+        </a>
       </div>
     </footer>
   </div>

@@ -55,14 +55,15 @@ header nav ul li a {
   color: #2f2a53;
   text-decoration: none;
   display: block;
+  font-size: 1.3em;
   
 } 
 
 header nav ul li a:hover,
 header nav ul li a.active {
 
-  background: #b7c5e0;
-  border-radius: 4px;
+  /* background: #b7c5e0;
+  border-radius: 4px; */
 }
 .menu-toggle {
 color: #fff;
@@ -113,9 +114,9 @@ nav {
   header nav.active {
       left: 0;
   }
-  header nav ul li a {
+  /* header nav ul li a {
       border-bottom: 1px solid rgba(0,0,0,.2)
-  }
+  } */
 
   .about-footer {
     padding: 0 120px;
