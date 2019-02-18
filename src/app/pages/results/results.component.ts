@@ -21,6 +21,7 @@ export class ResultsComponent implements OnInit {
   public university_search = ''
   public keyword_search = ''
   public p;
+  public universities = [];
 
   constructor(public searchService: SearchService, 
     private resultsService: ResultsService, 
@@ -158,7 +159,7 @@ export class ResultsComponent implements OnInit {
 
   getUniversity() {
     this.resultsService.getUniversity().subscribe((resp) => {
-      console.log(resp)
+      this.universities = resp['data'];
     })
   }
   

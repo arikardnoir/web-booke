@@ -1,5 +1,5 @@
-<header>
-    <div class="logo"><a [routerLink]="['/']"><img src="./assets/img/logo_2.png"></a></div>
+<header style="border-bottom: 1px solid whitesmoke;">
+    <div class="logo"><img [routerLink]="['/']" src="./assets/img/logo_2.png"></div>
     <nav>
         <ul>
             <li>
@@ -8,10 +8,10 @@
             <li>
                 <a [routerLink]="['/sobre']" class="active">Sobre</a>
             </li>
-            <li>
+            <!-- <li>
                 <a [routerLink]="['/operation']">Como Funciona</a>
             </li>
-          
+           -->
         </ul>
     </nav>
     <div class="menu-toggle" (click)="showOrHideMenu()">

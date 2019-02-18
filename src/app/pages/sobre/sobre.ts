@@ -35,10 +35,8 @@ export class SobreComponent implements OnInit {
   }
 
   hideMenu() {
-    if(this.hideShow) {
-      document.querySelector('.m').classList.remove('modal_menu');
-      document.querySelector('.m').classList.add('_menu');
-    }
+    document.querySelector('.m').classList.remove('modal_menu');
+    document.querySelector('.m').classList.add('_menu');
   }
 
 }

@@ -20,7 +20,7 @@
         <div class="box_menu" style="height: 50px;">
             <img class="b-rigth_logo" src="./assets/img/logo_2.png" alt="">
             <span class="menu" (click)="showOrHideMenu()"></span>     
-            <a [routerLink]="['/operation']" style="font-size: bold">Como Funciona</a>       
+            <!-- <a [routerLink]="['/operation']" style="font-size: bold">Como Funciona</a>        -->
             <a [routerLink]="['/sobre']" style="font-size: bold">Sobre</a>
             <a routerLinkActive="Active" [routerLink]="['/']" style="font-size: bold; color: #2f2a53">Home</a>
         </div>
@@ -45,7 +45,7 @@
     <span (click)="hideMenu()" style="position: absolute; top: 3%; right: 7%; color: white; font-size: 2em; ">X</span>
     <a [routerLink]="['/home']" class="active" style="font-size: 3em; color: white;">Home</a>
     <a [routerLink]="['/sobre']" style="font-size: 3em; color: white;">Sobre</a>
-    <a [routerLink]="['/operation']" style="font-size: 3em; color: white;">Como Funciona</a>
+    <!-- <a [routerLink]="['/operation']" style="font-size: 3em; color: white;">Como Funciona</a> -->
   </div>
 
    <!-- <div [class.modal_menu]="hideShow" class="_menu">
