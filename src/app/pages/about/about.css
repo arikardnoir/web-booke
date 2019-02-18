@@ -58,11 +58,11 @@ header nav ul li a {
   
 } 
 
-header nav ul li a:hover,
-header nav ul li a.active {
+header nav ul li:hover
+ {
 
-  background: #b7c5e0;
-  border-radius: 4px;
+  background: #2f2a53;
+  text-decoration-color: #fff;  
 }
 .menu-toggle {
 color: #fff;
@@ -110,8 +110,10 @@ nav {
   header nav ul {
     display: flex;
   }
+  header nav:hover,
   header nav.active {
-      left: 0;
+    color: #2f2a53;
+    left: 0;
   }
   header nav ul li a {
       border-bottom: 1px solid rgba(0,0,0,.2)
@@ -119,6 +121,9 @@ nav {
 
   .about-footer {
     padding: 0 120px;
+  }
+  .about-footer-div p {
+    padding: 5px;
   }
   
 }

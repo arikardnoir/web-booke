@@ -27,8 +27,7 @@ export class AboutComponent implements OnInit {
       document.querySelector('.m').classList.remove('modal_menu');
       document.querySelector('.m').classList.add('_menu');
     }
-    //document.querySelector('.menu');
-    
+    //document.querySelector('.menu');    
   }
 
   hideMenu() {
