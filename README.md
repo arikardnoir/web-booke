@@ -10,7 +10,7 @@ Essas instruções farão com que você tenha uma cópia do projeto em execuçã
 Caso não tenhas o angular instalado em sua máquina, siga os seguintes passos:
 
 ```js
-npm install -g ionic
+npm install -g @angular/cli
 ```
 Para mais detalhes, visite a [página](https://ionicframework.com/getting-started#cli)
 
@@ -18,7 +18,7 @@ OBS: O "-g" presente no comando de instalação, quer dizer que este framework s
 
 ex: para linux e mac
 ```js
-sudo npm install -g ionic
+sudo npm install
 ```
 
 DICA: Para o Windows, deve-se abrir o terminal como administrador.
@@ -28,19 +28,11 @@ DICA: Para o Windows, deve-se abrir o terminal como administrador.
 
 - copie o código abaixo e cole no terminal:
 ```js
-    git clone https://github.com/filipetristao777/app-eloverde.git
+    git clone https://github.com/EuclidesAmaro/web-booke.git
 ```
-
-- Após clonar o projeto para a sua máquina, navegue até a pasta do projeto, e na raíz do mesmo execute o seguinte comando:
-```js
-    git submodule update --init --recursive
-```
-
-O comando acima apresentado, vai clonar para o nosso projeto um submodulo que será compartilhado entre a "Aplicação Web" e o "App".
-
 
 - Para rodar o projeto, execute o comando abaixo:
-```js
-    ionic serve
+``` js
+ ng serve
 ```
 
